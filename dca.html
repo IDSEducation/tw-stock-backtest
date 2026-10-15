@@ -11,18 +11,18 @@
 </head>
 <body>
 <main class="shell">
-  <header class="top"><div class="brand"><div class="brand-mark">↗</div><span>投資實驗室</span></div><a class="badge" href="./">← 回到單筆投資回測</a></header>
-  <section class="hero"><div class="eyebrow">DOLLAR-COST AVERAGING SIMULATOR</div><h1>固定投入，<br>累積後會有多少？</h1><p>設定台股或 ETF、投入期間、頻率與每次金額，估算每次買進、股利、分割、手續費與交易稅後的期末資產和淨報酬。</p></section>
+  <header class="top"><div class="brand"><div class="brand-mark">↗</div><span>投資實驗室</span></div><a class="badge" href="./">切換到單筆投入回測 →</a></header>
+  <section class="hero"><div class="eyebrow">DOLLAR-COST AVERAGING SIMULATOR</div><h1>定期定額回測</h1><p>選擇一檔台股或 ETF，設定每次投入金額和投入頻率，查看這段期間投入多少、期末資產及扣除成本後的淨利與報酬率。</p></section>
   <div class="layout">
     <section class="card form-card">
       <h2 class="section-title">定期定額條件</h2>
       <form id="form">
         <div class="field"><label for="stock">台股／ETF 代號</label><input id="stock" type="text" value="2330" inputmode="text" autocapitalize="characters" spellcheck="false" maxlength="8" required placeholder="例如 2330、00980A、00631L"><p class="hint">支援一般股票、ETF、主動式 ETF、槓桿／反向 ETF 代號。</p></div>
         <div class="two"><div class="field"><label for="start">開始日期</label><input id="start" type="date" required></div><div class="field"><label for="end">結束日期</label><input id="end" type="date" required></div></div>
-        <div class="field"><label for="frequency">投入頻率</label><select id="frequency"><option value="monthly" selected>每月</option><option value="weekly">每週</option><option value="biweekly">每兩週</option><option value="custom">自訂間隔</option></select></div>
+        <div class="field"><label for="frequency">投入頻率</label><select id="frequency"><option value="monthly" selected>每月</option><option value="weekly">每週</option><option value="biweekly">每兩週</option><option value="custom">每隔幾天投入</option></select></div>
         <div class="field" id="monthlyField"><label for="monthlyDay">每月投入日</label><select id="monthlyDay"></select><p class="hint">當月沒有該日期時，以月底為準；遇休市日，順延到下一個交易日。</p></div>
         <div class="field hidden" id="weekdayField"><label for="weekday">每週投入日</label><select id="weekday"><option value="1">星期一</option><option value="2">星期二</option><option value="3">星期三</option><option value="4">星期四</option><option value="5">星期五</option></select><p class="hint">每兩週以第一個符合的星期幾為起點，之後每隔兩週投入。</p></div>
-        <div class="field hidden" id="intervalField"><label for="intervalDays">每隔幾個日曆日投入</label><input id="intervalDays" type="number" min="1" max="365" step="1" value="3"><p class="hint">例如輸入 3，即從開始日期起每隔 3 天安排一次；遇休市日順延至下一個交易日。</p></div>
+        <div class="field hidden" id="intervalField"><label for="intervalDays">幾天投入一次？</label><input id="intervalDays" type="number" min="1" max="365" step="1" value="3"><p class="hint">例如輸入 3，表示每 3 天安排一次投入。遇到休市日，就延到下一個開市日。</p></div>
         <div class="field"><label for="amount">每次投入金額（新台幣）</label><input id="amount" type="number" min="1000" max="20000000" step="1000" value="10000" required><p class="hint">每次金額為固定投入額；未買滿一股的餘額會累積，之後投入時一起使用。</p></div>
         <details class="advanced"><summary>交易成本設定</summary>
           <div class="two"><div class="field"><label for="buyFee">買進手續費（%）</label><input id="buyFee" type="number" min="0" step="0.0001" value="0.1425"></div><div class="field"><label for="sellFee">賣出手續費（%）</label><input id="sellFee" type="number" min="0" step="0.0001" value="0.1425"></div></div>
