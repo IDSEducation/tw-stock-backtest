@@ -19,9 +19,10 @@
       <form id="form">
         <div class="field"><label for="stock">台股／ETF 代號</label><input id="stock" type="text" value="2330" inputmode="text" autocapitalize="characters" spellcheck="false" maxlength="8" required placeholder="例如 2330、00980A、00631L"><p class="hint">支援一般股票、ETF、主動式 ETF、槓桿／反向 ETF 代號。</p></div>
         <div class="two"><div class="field"><label for="start">開始日期</label><input id="start" type="date" required></div><div class="field"><label for="end">結束日期</label><input id="end" type="date" required></div></div>
-        <div class="field"><label for="frequency">投入頻率</label><select id="frequency"><option value="monthly" selected>每月</option><option value="weekly">每週</option><option value="biweekly">每兩週</option></select></div>
+        <div class="field"><label for="frequency">投入頻率</label><select id="frequency"><option value="monthly" selected>每月</option><option value="weekly">每週</option><option value="biweekly">每兩週</option><option value="custom">自訂間隔</option></select></div>
         <div class="field" id="monthlyField"><label for="monthlyDay">每月投入日</label><select id="monthlyDay"></select><p class="hint">當月沒有該日期時，以月底為準；遇休市日，順延到下一個交易日。</p></div>
         <div class="field hidden" id="weekdayField"><label for="weekday">每週投入日</label><select id="weekday"><option value="1">星期一</option><option value="2">星期二</option><option value="3">星期三</option><option value="4">星期四</option><option value="5">星期五</option></select><p class="hint">每兩週以第一個符合的星期幾為起點，之後每隔兩週投入。</p></div>
+        <div class="field hidden" id="intervalField"><label for="intervalDays">每隔幾個日曆日投入</label><input id="intervalDays" type="number" min="1" max="365" step="1" value="3"><p class="hint">例如輸入 3，即從開始日期起每隔 3 天安排一次；遇休市日順延至下一個交易日。</p></div>
         <div class="field"><label for="amount">每次投入金額（新台幣）</label><input id="amount" type="number" min="1000" max="20000000" step="1000" value="10000" required><p class="hint">每次金額為固定投入額；未買滿一股的餘額會累積，之後投入時一起使用。</p></div>
         <details class="advanced"><summary>交易成本設定</summary>
           <div class="two"><div class="field"><label for="buyFee">買進手續費（%）</label><input id="buyFee" type="number" min="0" step="0.0001" value="0.1425"></div><div class="field"><label for="sellFee">賣出手續費（%）</label><input id="sellFee" type="number" min="0" step="0.0001" value="0.1425"></div></div>
@@ -72,6 +73,8 @@ function makeSchedule(args,prices){
       const d=new Date(Date.UTC(first.getUTCFullYear(),first.getUTCMonth(),Math.min(args.monthlyDay,lastDay)));
       if(d>end)break;if(d>=start)scheduled.push(fromUTC(d));
     }
+  }else if(args.frequency==="custom"){
+    for(let d=new Date(start);d<=end;d.setUTCDate(d.getUTCDate()+args.intervalDays))scheduled.push(fromUTC(d));
   }else{
     const weekday=args.weekday;const offset=(weekday-start.getUTCDay()+7)%7;
     const first=new Date(start);first.setUTCDate(first.getUTCDate()+offset);
@@ -167,7 +170,7 @@ function render(r){
   const pRows=r.purchases.slice(0,100).map(p=>`<tr><td>${p.date}</td><td>${p.plannedDates.join("、")}</td><td>${fmt(p.contribution)}</td><td>${fmt(p.price)}</td><td>${fmt(p.shares)}</td><td>${fmt(p.fee)}</td><td>${fmt(p.cashAfter)}</td></tr>`).join("");
   const aRows=r.actions.length?r.actions.map(a=>`<tr><td>${a.date}</td><td>${a.splitChange?"分割／反分割":(a.cash||a.bonus?"除權息":"—")}</td><td>${a.cash?fmt(a.cash):"—"}</td><td>${a.bonus?fmt(a.bonus):"—"}</td><td>${a.splitChange?`${a.splitChange>0?"+":""}${fmt(a.splitChange)} 股（${fmt(a.splitRatio)} 倍）`:"—"}</td><td>${a.cashSource||"—"}</td></tr>`).join(""):`<tr><td colspan="6" style="text-align:center;color:#89948f;padding:18px">持有期間沒有可辨識的股利或分割紀錄</td></tr>`;
   const warning=[r.purchases.length>100?`投入明細共 ${r.purchases.length} 筆，表格先顯示前 100 筆；回測總計仍包含全部投入。`:"",r.skippedScheduleCount?`共有 ${r.skippedScheduleCount} 個原定投入日距離下一筆行情超過 14 天，已略過（例如標的尚未掛牌或資料來源缺漏）。`:""].filter(Boolean).map(x=>`<div class="warning">${x}</div>`).join("");
-  $("results").innerHTML=`<section class="card headline"><div><div class="stockline"><strong>${r.args.stock}</strong><span>·</span><span>${r.entry.date} → ${r.exit.date}</span><span>·</span><span>${r.args.frequency==="monthly"?`每月 ${r.args.monthlyDay} 日`:r.args.frequency==="weekly"?"每週":"每兩週"}</span></div><div class="profit ${positive?"pos":"neg"}">${positive?"+":"−"}NT$ ${fmt(Math.abs(r.netProfit))}</div><div class="sub">期末資產 NT$ ${fmt(r.endingAssets)}　·　累計投入 NT$ ${fmt(r.totalInvested)}　·　累計淨報酬率 ${pct(r.netReturn)}</div></div><div class="return-pill ${returnClass}">${pct(r.netReturn)}</div></section>
+  $("results").innerHTML=`<section class="card headline"><div><div class="stockline"><strong>${r.args.stock}</strong><span>·</span><span>${r.entry.date} → ${r.exit.date}</span><span>·</span><span>${r.args.frequency==="monthly"?`每月 ${r.args.monthlyDay} 日`:r.args.frequency==="weekly"?"每週":r.args.frequency==="biweekly"?"每兩週":`每隔 ${r.args.intervalDays} 天`}</span></div><div class="profit ${positive?"pos":"neg"}">${positive?"+":"−"}NT$ ${fmt(Math.abs(r.netProfit))}</div><div class="sub">期末資產 NT$ ${fmt(r.endingAssets)}　·　累計投入 NT$ ${fmt(r.totalInvested)}　·　累計淨報酬率 ${pct(r.netReturn)}</div></div><div class="return-pill ${returnClass}">${pct(r.netReturn)}</div></section>
   <div class="metrics">${metric("累計投入本金",`NT$ ${fmt(r.totalInvested)}`,`${r.investCount} 次定期投入`)}${metric("期末持股",`${fmt(r.endingShares)} 股`,r.stockBonusShares?`含股票股利 ${fmt(r.stockBonusShares)} 股`:"以整股買進")}${metric("現金股利",`NT$ ${fmt(r.totalCashDividend)}`,"未再投入，計入期末資產")}${metric("投入餘額",`NT$ ${fmt(r.cashBalance)}`,"未使用的投入現金")}${metric("買進成交金額",`NT$ ${fmt(r.totalBuyValue)}`,`買進手續費 NT$ ${fmt(r.totalBuyFee)}`)}${metric("賣出成本估算",`NT$ ${fmt(r.sellFee+r.transactionTax)}`,`手續費 ${fmt(r.sellFee)} · 交易稅 ${fmt(r.transactionTax)}`)}${metric("分割調整股數",`${r.splitAdjustmentShares>0?"+":""}${fmt(r.splitAdjustmentShares)} 股`,"依資料來源參考價比例調整")}</div>
   <section class="card panel"><div class="panel-head"><h3>資產累積走勢</h3><span class="panel-tag">期末資產估值 vs 累計投入本金</span></div>${chartSvg(r.curve)}</section>
   <section class="card panel"><div class="panel-head"><h3>期末淨損益拆解</h3><span class="panel-tag">假設結束日收盤賣出</span></div><div class="table-wrap"><table><thead><tr><th>項目</th><th>金額（NT$）</th><th>說明</th></tr></thead><tbody><tr><td>期末持股市值</td><td>${fmt(r.sellValue)}</td><td>${fmt(r.endingShares)} 股 × ${fmt(r.exit.close)}</td></tr><tr><td>投入餘額</td><td>${fmt(r.cashBalance)}</td><td>未使用的投入本金</td></tr><tr><td>累計現金股利</td><td>${fmt(r.totalCashDividend)}</td><td>依除息日持股計入，股利留現金</td></tr><tr><td>買進手續費</td><td>−${fmt(r.totalBuyFee)}</td><td>依每次實際買進金額計算</td></tr><tr><td>期末賣出手續費</td><td>−${fmt(r.sellFee)}</td><td>${r.args.sellFee}%</td></tr><tr><td>期末證券交易稅</td><td>−${fmt(r.transactionTax)}</td><td>${r.args.tax}%</td></tr><tr><td><strong>期末資產</strong></td><td><strong>${fmt(r.endingAssets)}</strong></td><td>持股市值 + 現金 + 股利 − 期末賣出費稅</td></tr><tr><td>累計投入本金</td><td>−${fmt(r.totalInvested)}</td><td>${r.investCount} 次投入</td></tr><tr><td><strong>淨利／淨損</strong></td><td><strong>${fmt(r.netProfit)}</strong></td><td>累計淨報酬率 ${pct(r.netReturn)}（非年化）</td></tr></tbody></table></div></section>
@@ -177,15 +180,18 @@ function render(r){
   $("results").classList.remove("hidden");$("empty").classList.add("hidden");
 }
 $("frequency").addEventListener("change",()=>{
-  const monthly=$("frequency").value==="monthly";
-  $("monthlyField").classList.toggle("hidden",!monthly);$("weekdayField").classList.toggle("hidden",monthly);
+  const frequency=$("frequency").value;
+  $("monthlyField").classList.toggle("hidden",frequency!=="monthly");
+  $("weekdayField").classList.toggle("hidden",frequency!=="weekly"&&frequency!=="biweekly");
+  $("intervalField").classList.toggle("hidden",frequency!=="custom");
 });
 $("form").addEventListener("submit",async e=>{
   e.preventDefault();$("error").classList.add("hidden");$("results").classList.add("hidden");$("empty").classList.add("hidden");$("loading").classList.remove("hidden");$("run").disabled=true;
-  const args={stock:$("stock").value.trim().toUpperCase(),start:$("start").value,end:$("end").value,frequency:$("frequency").value,monthlyDay:Number($("monthlyDay").value),weekday:Number($("weekday").value),amount:Number($("amount").value),buyFee:Number($("buyFee").value),sellFee:Number($("sellFee").value),tax:Number($("tax").value)};
+  const args={stock:$("stock").value.trim().toUpperCase(),start:$("start").value,end:$("end").value,frequency:$("frequency").value,monthlyDay:Number($("monthlyDay").value),weekday:Number($("weekday").value),intervalDays:Number($("intervalDays").value),amount:Number($("amount").value),buyFee:Number($("buyFee").value),sellFee:Number($("sellFee").value),tax:Number($("tax").value)};
   try{
     if(!/^\d{4,6}[A-Z]{0,2}$/.test(args.stock))throw new Error("代號格式請輸入 4 至 6 位數字，可加 1 至 2 個英文字尾，例如 00980A 或 00631L。");
     if(!args.start||!args.end||args.start>args.end)throw new Error("請確認日期範圍正確，開始日期需早於結束日期。");
+    if(args.frequency==="custom"&&(!Number.isInteger(args.intervalDays)||args.intervalDays<1||args.intervalDays>365))throw new Error("自訂投入間隔請輸入 1 至 365 個日曆日。");
     if(!Number.isFinite(args.amount)||args.amount<1000||args.amount>20000000)throw new Error("每次投入金額請輸入新台幣 1,000 至 2,000 萬。");
     if([args.buyFee,args.sellFee,args.tax].some(x=>!Number.isFinite(x)||x<0))throw new Error("請確認交易成本設定為有效的非負數。");
     $("loadingText").textContent=`正在下載 ${args.stock} 的行情、股利與分割資料…`;
