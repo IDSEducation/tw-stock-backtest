@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="台股定期定額回測：設定期間、投入頻率與金額，估算股利、手續費與交易稅後的淨損益。">
+  <title>台股定期定額回測｜投資實驗室</title>
+  <style>
+    :root{--ink:#14231f;--muted:#75817d;--paper:#f5f7f4;--white:#fff;--line:#e4eae5;--green:#1e8065;--green2:#dff1e9;--red:#bb5549;--shadow:0 18px 48px #20362b12}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif}button,input,select{font:inherit}.shell{max-width:1180px;margin:auto;padding:28px 28px 60px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:36px}.brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:.02em}.brand-mark{width:38px;height:38px;border-radius:13px;background:var(--ink);display:grid;place-items:center;color:#bfe3d3;font-size:18px}.badge{font-size:12px;color:#59746a;border:1px solid #d9e5dd;border-radius:999px;padding:7px 12px;background:#ffffffa8;text-decoration:none}.badge:hover{border-color:var(--green);color:var(--green)}.hero{max-width:760px;margin-bottom:28px}.eyebrow{color:var(--green);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.hero h1{font-size:clamp(32px,5vw,50px);line-height:1.13;letter-spacing:-.04em;margin:12px 0}.hero p{max-width:700px;color:#66736d;margin:0;font-size:16px}.layout{display:grid;grid-template-columns:355px 1fr;gap:20px;align-items:start}.card{background:var(--white);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.form-card{padding:24px;position:sticky;top:20px}.section-title{font-size:14px;font-weight:800;margin:0 0 18px}.field{margin-bottom:15px}.field label{display:block;font-size:12px;font-weight:700;color:#53635c;margin-bottom:7px}.field input,.field select{width:100%;height:44px;border:1px solid #dce4de;background:#fcfdfc;border-radius:10px;padding:0 11px;color:var(--ink);outline:none}.field input:focus,.field select:focus{border-color:var(--green);box-shadow:0 0 0 3px #1e80651b}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hint{font-size:11px;color:#82908a;margin:7px 0 0;line-height:1.5}.advanced{border-top:1px solid var(--line);padding-top:14px;margin-top:4px}.advanced summary{cursor:pointer;font-size:12px;font-weight:750;color:#52635c;list-style:none}.advanced summary::-webkit-details-marker{display:none}.advanced summary:after{content:"＋";float:right;color:var(--green)}.advanced[open] summary:after{content:"−"}.advanced .field{margin:14px 0 0}.run{width:100%;border:0;border-radius:11px;background:var(--ink);color:#fff;padding:13px 16px;margin-top:10px;font-weight:750;cursor:pointer;transition:.18s}.run:hover{background:#245247;transform:translateY(-1px)}.run:disabled{opacity:.6;cursor:wait;transform:none}.fineprint{font-size:11px;color:#89948f;margin:12px 1px 0;line-height:1.6}.content{min-width:0}.empty{padding:44px 30px;min-height:440px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:linear-gradient(140deg,#fff,#f2f7f2)}.empty-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:16px;background:var(--green2);color:var(--green);font-size:24px;margin-bottom:18px}.empty h2{font-size:23px;margin:0 0 8px}.empty p{color:var(--muted);max-width:500px;margin:0}.steps{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;color:#64736c;font-size:12px}.steps span{display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;background:#7db69c;border-radius:50%}.hidden{display:none!important}.error{border:1px solid #f1d7d3;background:#fff5f3;color:#9b3d34;padding:14px 16px;border-radius:12px;margin-bottom:16px;font-size:13px}.loading{padding:40px;text-align:center;color:var(--muted)}.spinner{display:inline-block;width:18px;height:18px;border:2px solid #d8e3dc;border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite;vertical-align:-4px;margin-right:9px}@keyframes spin{to{transform:rotate(360deg)}}.results{display:grid;gap:16px}.headline{padding:24px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.stockline{display:flex;align-items:center;gap:9px;color:#6b7771;font-size:13px;flex-wrap:wrap}.stockline strong{font-size:16px;color:var(--ink)}.profit{font-size:clamp(29px,4vw,40px);font-weight:800;letter-spacing:-.035em;line-height:1.1;margin-top:12px}.profit.pos{color:var(--green)}.profit.neg{color:var(--red)}.sub{color:var(--muted);font-size:12px;margin-top:7px}.return-pill{border-radius:12px;background:var(--green2);color:var(--green);padding:9px 13px;font-size:15px;font-weight:800;white-space:nowrap}.return-pill.neg{background:#fbebe8;color:var(--red)}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.metric{padding:16px 17px}.metric label{display:block;color:var(--muted);font-size:11px;margin-bottom:8px}.metric strong{font-size:18px;letter-spacing:-.02em}.metric small{display:block;font-size:11px;color:#89948f;margin-top:3px}.panel{padding:20px 22px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.panel h3{font-size:14px;margin:0}.panel-tag{font-size:11px;color:var(--muted);text-align:right}.chart{width:100%;height:215px;display:block}.legend{display:flex;gap:18px;flex-wrap:wrap;color:#75817d;font-size:11px;margin-top:6px}.legend i{display:inline-block;width:14px;height:3px;border-radius:3px;vertical-align:middle;margin-right:5px;background:var(--green)}.legend .invested{background:#d1a345}.chart-labels{display:flex;justify-content:space-between;color:#9aa49f;font-size:10px}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12px;white-space:nowrap}th,td{text-align:right;padding:9px 10px;border-bottom:1px solid #eef1ee}th:first-child,td:first-child{text-align:left}th{font-size:10px;color:#839089;font-weight:700}td:first-child{color:#52625b}.note{padding:14px 17px;color:#65726c;font-size:11px;background:#eff4f0;border-radius:12px;line-height:1.7}.warning{padding:12px 15px;border-radius:12px;background:#fff9e9;border:1px solid #f1e5bd;color:#786331;font-size:12px}.footer{margin-top:30px;color:#97a19b;font-size:11px;text-align:center}.source{color:#76877e;text-decoration:underline;text-underline-offset:2px}@media(max-width:900px){.layout{grid-template-columns:1fr}.form-card{position:static}.metrics{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.shell{padding:17px 14px 40px}.top{margin-bottom:26px}.form-card{padding:19px}.headline{padding:19px;flex-direction:column}.metrics{gap:8px}.metric{padding:14px}.metric strong{font-size:16px}.panel{padding:17px}.two{gap:8px}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="top"><div class="brand"><div class="brand-mark">↗</div><span>投資實驗室</span></div><a class="badge" href="./">← 回到單筆投資回測</a></header>
+  <section class="hero"><div class="eyebrow">DOLLAR-COST AVERAGING SIMULATOR</div><h1>固定投入，<br>累積後會有多少？</h1><p>設定台股或 ETF、投入期間、頻率與每次金額，估算每次買進、股利、分割、手續費與交易稅後的期末資產和淨報酬。</p></section>
+  <div class="layout">
+    <section class="card form-card">
+      <h2 class="section-title">定期定額條件</h2>
+      <form id="form">
+        <div class="field"><label for="stock">台股／ETF 代號</label><input id="stock" type="text" value="2330" inputmode="text" autocapitalize="characters" spellcheck="false" maxlength="8" required placeholder="例如 2330、00980A、00631L"><p class="hint">支援一般股票、ETF、主動式 ETF、槓桿／反向 ETF 代號。</p></div>
+        <div class="two"><div class="field"><label for="start">開始日期</label><input id="start" type="date" required></div><div class="field"><label for="end">結束日期</label><input id="end" type="date" required></div></div>
+        <div class="field"><label for="frequency">投入頻率</label><select id="frequency"><option value="monthly" selected>每月</option><option value="weekly">每週</option><option value="biweekly">每兩週</option></select></div>
+        <div class="field" id="monthlyField"><label for="monthlyDay">每月投入日</label><select id="monthlyDay"></select><p class="hint">當月沒有該日期時，以月底為準；遇休市日，順延到下一個交易日。</p></div>
+        <div class="field hidden" id="weekdayField"><label for="weekday">每週投入日</label><select id="weekday"><option value="1">星期一</option><option value="2">星期二</option><option value="3">星期三</option><option value="4">星期四</option><option value="5">星期五</option></select><p class="hint">每兩週以第一個符合的星期幾為起點，之後每隔兩週投入。</p></div>
+        <div class="field"><label for="amount">每次投入金額（新台幣）</label><input id="amount" type="number" min="1000" max="20000000" step="1000" value="10000" required><p class="hint">每次金額為固定投入額；未買滿一股的餘額會累積，之後投入時一起使用。</p></div>
+        <details class="advanced"><summary>交易成本設定</summary>
+          <div class="two"><div class="field"><label for="buyFee">買進手續費（%）</label><input id="buyFee" type="number" min="0" step="0.0001" value="0.1425"></div><div class="field"><label for="sellFee">賣出手續費（%）</label><input id="sellFee" type="number" min="0" step="0.0001" value="0.1425"></div></div>
+          <div class="field"><label for="tax">賣出交易稅（%）</label><input id="tax" type="number" min="0" step="0.01" value="0.3"><p class="hint">依標的及交易類型調整；預設一般股票 0.3%。</p></div>
+        </details>
+        <button class="run" id="run" type="submit">開始定期定額回測 <span aria-hidden="true">→</span></button>
+        <p class="fineprint">每筆投入於指定日期當天或之後第一個交易日收盤買進；期末以結束日當天或之前最近交易日收盤估值，並計入假設當日賣出的手續費與交易稅。</p>
+      </form>
+    </section>
+    <section class="content">
+      <div id="error" class="error hidden" role="alert"></div>
+      <div id="loading" class="card loading hidden"><span class="spinner"></span><span id="loadingText">正在取得行情、股利與分割資料…</span></div>
+      <div id="empty" class="card empty"><div class="empty-icon">↗</div><h2>設定你的投入計畫</h2><p>輸入標的、期間、頻率與每次投入金額，查看累計本金、期末資產、淨利及淨報酬率。</p><div class="steps"><span><i class="dot"></i>固定週期買進</span><span><i class="dot"></i>股利與股數調整</span><span><i class="dot"></i>成本後淨損益</span></div></div>
+      <div id="results" class="results hidden" aria-live="polite"></div>
+    </section>
+  </div>
+  <footer class="footer">資料來源：<a class="source" href="https://finmind.github.io/" target="_blank" rel="noopener">FinMind</a>。歷史回測僅供研究，過去績效不代表未來結果。</footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const pad=n=>String(n).padStart(2,"0");
+const localISO=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const now=new Date(),today=localISO(now),five=new Date(now);five.setFullYear(five.getFullYear()-5);
+$("start").value=localISO(five);$("end").value=today;
+for(let i=1;i<=31;i++){$("monthlyDay").add(new Option(`${i} 日`,String(i),false,i===10))}
+const fmt=n=>new Intl.NumberFormat("zh-TW",{maximumFractionDigits:2}).format(n);
+const pct=n=>(n>=0?"+":"")+n.toFixed(2)+"%";
+const safeNum=x=>{const n=Number(x);return Number.isFinite(n)?n:0};
+const asUTC=s=>{const [y,m,d]=s.split("-").map(Number);return new Date(Date.UTC(y,m-1,d))};
+const fromUTC=d=>`${d.getUTCFullYear()}-${pad(d.getUTCMonth()+1)}-${pad(d.getUTCDate())}`;
+function dateCmp(a,b){return a.localeCompare(b)}
+async function fetchData(dataset,id,start,end){
+  const u=new URL("https://api.finmindtrade.com/api/v4/data");
+  const params={dataset};if(id)params.data_id=id;if(start)params.start_date=start;if(end)params.end_date=end;
+  Object.entries(params).forEach(([k,v])=>u.searchParams.set(k,v));
+  const res=await fetch(u,{headers:{Accept:"application/json"}});
+  if(!res.ok){let msg="";try{msg=(await res.json()).msg||""}catch{}throw new Error(`資料服務回應 ${res.status}${msg?"："+msg:""}（${dataset}）`)}
+  const json=await res.json();if(json.status!==200)throw new Error(json.msg||`${dataset} 查詢失敗`);
+  return Array.isArray(json.data)?json.data:[];
+}
+function makeSchedule(args,prices){
+  const scheduled=[];const start=asUTC(args.start),end=asUTC(args.end);
+  if(args.frequency==="monthly"){
+    let y=start.getUTCFullYear(),m=start.getUTCMonth();
+    for(let i=0;i<1200;i++){
+      const first=new Date(Date.UTC(y,m+i,1));
+      const lastDay=new Date(Date.UTC(first.getUTCFullYear(),first.getUTCMonth()+1,0)).getUTCDate();
+      const d=new Date(Date.UTC(first.getUTCFullYear(),first.getUTCMonth(),Math.min(args.monthlyDay,lastDay)));
+      if(d>end)break;if(d>=start)scheduled.push(fromUTC(d));
+    }
+  }else{
+    const weekday=args.weekday;const offset=(weekday-start.getUTCDay()+7)%7;
+    const first=new Date(start);first.setUTCDate(first.getUTCDate()+offset);
+    const step=args.frequency==="biweekly"?14:7;
+    for(let d=new Date(first);d<=end;d.setUTCDate(d.getUTCDate()+step))scheduled.push(fromUTC(d));
+  }
+  const byDate=new Map();
+  for(const plannedDate of scheduled){
+    const execution=prices.find(p=>p.date>=plannedDate&&p.date<=args.end);
+    if(!execution)continue;
+    const rolloverDays=(asUTC(execution.date)-asUTC(plannedDate))/86400000;
+    // Keep holiday roll-forward short; do not pretend contributions were invested before a newly listed ETF had prices.
+    if(rolloverDays>14)continue;
+    const row=byDate.get(execution.date)||{date:execution.date,plannedDates:[],contribution:0};
+    row.plannedDates.push(plannedDate);row.contribution+=args.amount;byDate.set(execution.date,row);
+  }
+  const rows=[...byDate.values()].sort((a,b)=>dateCmp(a.date,b.date));
+  rows.skippedCount=scheduled.length-rows.reduce((sum,row)=>sum+row.plannedDates.length,0);
+  return rows;
+}
+function buildResult(priceRows,divRows,divResultRows,splitRows,args){
+  const priceMap=new Map();
+  for(const r of priceRows){const date=String(r.date||"").slice(0,10),close=safeNum(r.close);if(date&&close>0)priceMap.set(date,{date,close,open:safeNum(r.open)||close})}
+  const prices=[...priceMap.values()].sort((a,b)=>dateCmp(a.date,b.date));
+  const entry=prices.find(p=>p.date>=args.start),exit=[...prices].reverse().find(p=>p.date<=args.end);
+  if(!entry||!exit)throw new Error("指定區間找不到可用行情，請調整日期或確認股票代號。");
+  if(entry.date>exit.date)throw new Error("開始日期之後沒有可用的結束行情，請擴大回測區間。");
+  const schedule=makeSchedule(args,prices);
+  if(!schedule.length)throw new Error("這段期間沒有可執行的投入日。請延長期間，或調整每月投入日／每週星期幾。");
+  const buyRate=args.buyFee/100,sellRate=args.sellFee/100,taxRate=args.tax/100;
+  const buyMap=new Map(schedule.map(x=>[x.date,x]));
+  const events=new Map(),getEvent=date=>events.get(date)||{cashPerShare:0,stockPerShare:0,splitRatio:1,cashSource:""};
+  const primaryCashDates=new Set();
+  for(const d of divRows){
+    const cashDate=String(d.CashExDividendTradingDate||"").slice(0,10),stockDate=String(d.StockExDividendTradingDate||"").slice(0,10);
+    const cashPerShare=safeNum(d.CashEarningsDistribution)+safeNum(d.CashStatutorySurplus);
+    const stockPerShare=safeNum(d.StockEarningsDistribution)+safeNum(d.StockStatutorySurplus);
+    if(cashDate&&cashDate>=entry.date&&cashDate<=exit.date&&cashPerShare>0){const ev=getEvent(cashDate);ev.cashPerShare+=cashPerShare;ev.cashSource="股利政策";events.set(cashDate,ev);primaryCashDates.add(cashDate)}
+    if(stockDate&&stockDate>=entry.date&&stockDate<=exit.date&&stockPerShare>0){const ev=getEvent(stockDate);ev.stockPerShare+=stockPerShare;events.set(stockDate,ev)}
+  }
+  // ETF distributions may be absent from the company dividend policy table; use the ex-dividend result only as a date-level fallback.
+  for(const d of divResultRows){
+    const date=String(d.date||"").slice(0,10),kind=String(d.stock_or_cache_dividend||"");
+    const amount=safeNum(d.stock_and_cache_dividend);
+    if(!date||date<entry.date||date>exit.date||!kind.includes("息")||amount<=0||primaryCashDates.has(date))continue;
+    const ev=getEvent(date);ev.cashPerShare+=amount;ev.cashSource="除權息結果（補充）";events.set(date,ev);primaryCashDates.add(date);
+  }
+  for(const x of splitRows){
+    const date=String(x.date||"").slice(0,10),before=safeNum(x.before_price),after=safeNum(x.after_price);
+    if(!date||date<entry.date||date>exit.date||before<=0||after<=0)continue;
+    const ratio=before/after;if(!Number.isFinite(ratio)||ratio<=0||Math.abs(ratio-1)<0.0001)continue;
+    const ev=getEvent(date);ev.splitRatio*=ratio;events.set(date,ev);
+  }
+  let totalInvested=0,currentShares=0,cashBalance=0,totalCashDividend=0,stockBonusShares=0,splitAdjustmentShares=0,totalBuyValue=0,totalBuyFee=0,investCount=0;
+  const purchases=[],actions=[],curve=[];
+  for(const p of prices){
+    if(p.date<entry.date||p.date>exit.date)continue;
+    const ev=events.get(p.date);
+    if(ev&&currentShares>0){
+      const beforeSplit=currentShares;currentShares*=ev.splitRatio;
+      const splitChange=currentShares-beforeSplit;splitAdjustmentShares+=splitChange;
+      const cash=ev.cashPerShare*currentShares;
+      const bonus=ev.stockPerShare>0?currentShares*ev.stockPerShare/10:0;
+      currentShares+=bonus;totalCashDividend+=cash;stockBonusShares+=bonus;
+      if(splitChange||cash||bonus)actions.push({date:p.date,splitChange,splitRatio:ev.splitRatio,cash,bonus,cashSource:ev.cashSource||""});
+    }
+    const scheduled=buyMap.get(p.date);
+    if(scheduled){
+      cashBalance+=scheduled.contribution;totalInvested+=scheduled.contribution;investCount+=scheduled.plannedDates.length;
+      const available=cashBalance,quantity=Math.floor(available/(p.close*(1+buyRate)));
+      const gross=quantity*p.close,fee=gross*buyRate;
+      cashBalance-=gross+fee;currentShares+=quantity;totalBuyValue+=gross;totalBuyFee+=fee;
+      purchases.push({date:p.date,plannedDates:scheduled.plannedDates,contribution:scheduled.contribution,price:p.close,shares:quantity,gross,fee,cashAfter:cashBalance});
+    }
+    curve.push({date:p.date,value:currentShares*p.close+cashBalance+totalCashDividend,invested:totalInvested});
+  }
+  const endingShares=currentShares,sellValue=endingShares*exit.close,sellFee=sellValue*sellRate,transactionTax=sellValue*taxRate;
+  const endingAssets=sellValue+cashBalance+totalCashDividend-sellFee-transactionTax;
+  const netProfit=endingAssets-totalInvested,netReturn=totalInvested?netProfit/totalInvested*100:0;
+  const held=prices.filter(p=>p.date>=entry.date&&p.date<=exit.date);
+  return {args,entry,exit,schedule,skippedScheduleCount:schedule.skippedCount||0,purchases,actions,curve,investCount,totalInvested,endingShares,stockBonusShares,splitAdjustmentShares,cashBalance,totalCashDividend,totalBuyValue,totalBuyFee,sellValue,sellFee,transactionTax,endingAssets,netProfit,netReturn,held};
+}
+function chartSvg(points){
+  if(!points.length)return "";
+  const sampled=points.length>180?points.filter((_,i)=>i%Math.ceil(points.length/150)===0||i===points.length-1):points;
+  const max=Math.max(1,...sampled.map(x=>Math.max(x.value,x.invested))),w=760,h=190,pad=9;
+  const line=key=>sampled.map((x,i)=>`${i===0?"M":"L"}${pad+i/(Math.max(1,sampled.length-1))*(w-2*pad)},${h-pad-(x[key]/max)*(h-2*pad)}`).join(" ");
+  return `<svg class="chart" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="定期定額資產價值與累計投入比較"><line x1="0" x2="${w}" y1="${h-pad}" y2="${h-pad}" stroke="#e8eee9"/><path d="${line("invested")}" fill="none" stroke="#d1a345" stroke-width="2" vector-effect="non-scaling-stroke"/><path d="${line("value")}" fill="none" stroke="#1e8065" stroke-width="2.5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="chart-labels"><span>${sampled[0].date}</span><span>${sampled.at(-1).date}</span></div><div class="legend"><span><i></i>期末資產估值</span><span><i class="invested"></i>累計投入本金</span></div>`;
+}
+function render(r){
+  const positive=r.netProfit>=0,returnClass=positive?"":"neg";
+  const metric=(label,value,sub="")=>`<div class="metric card"><label>${label}</label><strong>${value}</strong>${sub?`<small>${sub}</small>`:""}</div>`;
+  const pRows=r.purchases.slice(0,100).map(p=>`<tr><td>${p.date}</td><td>${p.plannedDates.join("、")}</td><td>${fmt(p.contribution)}</td><td>${fmt(p.price)}</td><td>${fmt(p.shares)}</td><td>${fmt(p.fee)}</td><td>${fmt(p.cashAfter)}</td></tr>`).join("");
+  const aRows=r.actions.length?r.actions.map(a=>`<tr><td>${a.date}</td><td>${a.splitChange?"分割／反分割":(a.cash||a.bonus?"除權息":"—")}</td><td>${a.cash?fmt(a.cash):"—"}</td><td>${a.bonus?fmt(a.bonus):"—"}</td><td>${a.splitChange?`${a.splitChange>0?"+":""}${fmt(a.splitChange)} 股（${fmt(a.splitRatio)} 倍）`:"—"}</td><td>${a.cashSource||"—"}</td></tr>`).join(""):`<tr><td colspan="6" style="text-align:center;color:#89948f;padding:18px">持有期間沒有可辨識的股利或分割紀錄</td></tr>`;
+  const warning=[r.purchases.length>100?`投入明細共 ${r.purchases.length} 筆，表格先顯示前 100 筆；回測總計仍包含全部投入。`:"",r.skippedScheduleCount?`共有 ${r.skippedScheduleCount} 個原定投入日距離下一筆行情超過 14 天，已略過（例如標的尚未掛牌或資料來源缺漏）。`:""].filter(Boolean).map(x=>`<div class="warning">${x}</div>`).join("");
+  $("results").innerHTML=`<section class="card headline"><div><div class="stockline"><strong>${r.args.stock}</strong><span>·</span><span>${r.entry.date} → ${r.exit.date}</span><span>·</span><span>${r.args.frequency==="monthly"?`每月 ${r.args.monthlyDay} 日`:r.args.frequency==="weekly"?"每週":"每兩週"}</span></div><div class="profit ${positive?"pos":"neg"}">${positive?"+":"−"}NT$ ${fmt(Math.abs(r.netProfit))}</div><div class="sub">期末資產 NT$ ${fmt(r.endingAssets)}　·　累計投入 NT$ ${fmt(r.totalInvested)}　·　累計淨報酬率 ${pct(r.netReturn)}</div></div><div class="return-pill ${returnClass}">${pct(r.netReturn)}</div></section>
+  <div class="metrics">${metric("累計投入本金",`NT$ ${fmt(r.totalInvested)}`,`${r.investCount} 次定期投入`)}${metric("期末持股",`${fmt(r.endingShares)} 股`,r.stockBonusShares?`含股票股利 ${fmt(r.stockBonusShares)} 股`:"以整股買進")}${metric("現金股利",`NT$ ${fmt(r.totalCashDividend)}`,"未再投入，計入期末資產")}${metric("投入餘額",`NT$ ${fmt(r.cashBalance)}`,"未使用的投入現金")}${metric("買進成交金額",`NT$ ${fmt(r.totalBuyValue)}`,`買進手續費 NT$ ${fmt(r.totalBuyFee)}`)}${metric("賣出成本估算",`NT$ ${fmt(r.sellFee+r.transactionTax)}`,`手續費 ${fmt(r.sellFee)} · 交易稅 ${fmt(r.transactionTax)}`)}${metric("分割調整股數",`${r.splitAdjustmentShares>0?"+":""}${fmt(r.splitAdjustmentShares)} 股`,"依資料來源參考價比例調整")}</div>
+  <section class="card panel"><div class="panel-head"><h3>資產累積走勢</h3><span class="panel-tag">期末資產估值 vs 累計投入本金</span></div>${chartSvg(r.curve)}</section>
+  <section class="card panel"><div class="panel-head"><h3>期末淨損益拆解</h3><span class="panel-tag">假設結束日收盤賣出</span></div><div class="table-wrap"><table><thead><tr><th>項目</th><th>金額（NT$）</th><th>說明</th></tr></thead><tbody><tr><td>期末持股市值</td><td>${fmt(r.sellValue)}</td><td>${fmt(r.endingShares)} 股 × ${fmt(r.exit.close)}</td></tr><tr><td>投入餘額</td><td>${fmt(r.cashBalance)}</td><td>未使用的投入本金</td></tr><tr><td>累計現金股利</td><td>${fmt(r.totalCashDividend)}</td><td>依除息日持股計入，股利留現金</td></tr><tr><td>買進手續費</td><td>−${fmt(r.totalBuyFee)}</td><td>依每次實際買進金額計算</td></tr><tr><td>期末賣出手續費</td><td>−${fmt(r.sellFee)}</td><td>${r.args.sellFee}%</td></tr><tr><td>期末證券交易稅</td><td>−${fmt(r.transactionTax)}</td><td>${r.args.tax}%</td></tr><tr><td><strong>期末資產</strong></td><td><strong>${fmt(r.endingAssets)}</strong></td><td>持股市值 + 現金 + 股利 − 期末賣出費稅</td></tr><tr><td>累計投入本金</td><td>−${fmt(r.totalInvested)}</td><td>${r.investCount} 次投入</td></tr><tr><td><strong>淨利／淨損</strong></td><td><strong>${fmt(r.netProfit)}</strong></td><td>累計淨報酬率 ${pct(r.netReturn)}（非年化）</td></tr></tbody></table></div></section>
+  <section class="card panel"><div class="panel-head"><h3>每次投入明細</h3><span class="panel-tag">順延後交易日以收盤價買進</span></div>${warning}<div class="table-wrap"><table><thead><tr><th>成交日</th><th>原定投入日</th><th>本次投入（NT$）</th><th>收盤價（NT$）</th><th>買入股數</th><th>手續費（NT$）</th><th>買後投入餘額（NT$）</th></tr></thead><tbody>${pRows}</tbody></table></div></section>
+  <section class="card panel"><div class="panel-head"><h3>持有期間股利與分割</h3><span class="panel-tag">現金股利留現金；分割調整股數</span></div><div class="table-wrap"><table><thead><tr><th>日期</th><th>事件</th><th>現金股利（NT$）</th><th>股票股利（股）</th><th>分割調整股數</th><th>現金股利資料</th></tr></thead><tbody>${aRows}</tbody></table></div></section>
+  <div class="note">計算口徑：每月日／每週日遇休市時，順延到下一個交易日；若每月指定日不存在，採該月最後一日。每次投入先加入累積現金，再以收盤價買進整股，手續費一併扣除，未用餘額留待下一次買進；現金股利依除息日當時持股計算並保留至期末，不自動再投入。股票股利以每股面額 NT$10 換算理論股數；分割／反分割依 FinMind 分割前後參考價調整股數。淨報酬率＝淨利 ÷ 累計投入本金，屬整段期間累計值、不是年化報酬。未計最低手續費、券商折扣、個人股利所得稅、健保補充保費及零股配發差異；配息資料依資料來源可取得紀錄，結果為估算。</div>`;
+  $("results").classList.remove("hidden");$("empty").classList.add("hidden");
+}
+$("frequency").addEventListener("change",()=>{
+  const monthly=$("frequency").value==="monthly";
+  $("monthlyField").classList.toggle("hidden",!monthly);$("weekdayField").classList.toggle("hidden",monthly);
+});
+$("form").addEventListener("submit",async e=>{
+  e.preventDefault();$("error").classList.add("hidden");$("results").classList.add("hidden");$("empty").classList.add("hidden");$("loading").classList.remove("hidden");$("run").disabled=true;
+  const args={stock:$("stock").value.trim().toUpperCase(),start:$("start").value,end:$("end").value,frequency:$("frequency").value,monthlyDay:Number($("monthlyDay").value),weekday:Number($("weekday").value),amount:Number($("amount").value),buyFee:Number($("buyFee").value),sellFee:Number($("sellFee").value),tax:Number($("tax").value)};
+  try{
+    if(!/^\d{4,6}[A-Z]{0,2}$/.test(args.stock))throw new Error("代號格式請輸入 4 至 6 位數字，可加 1 至 2 個英文字尾，例如 00980A 或 00631L。");
+    if(!args.start||!args.end||args.start>args.end)throw new Error("請確認日期範圍正確，開始日期需早於結束日期。");
+    if(!Number.isFinite(args.amount)||args.amount<1000||args.amount>20000000)throw new Error("每次投入金額請輸入新台幣 1,000 至 2,000 萬。");
+    if([args.buyFee,args.sellFee,args.tax].some(x=>!Number.isFinite(x)||x<0))throw new Error("請確認交易成本設定為有效的非負數。");
+    $("loadingText").textContent=`正在下載 ${args.stock} 的行情、股利與分割資料…`;
+    const [prices,dividends,dividendResults,allSplits]=await Promise.all([fetchData("TaiwanStockPrice",args.stock,args.start,args.end),fetchData("TaiwanStockDividend",args.stock,args.start,args.end),fetchData("TaiwanStockDividendResult",args.stock,args.start,args.end),fetchData("TaiwanStockSplitPrice")]);
+    const splits=allSplits.filter(x=>String(x.stock_id||"").trim()===args.stock&&String(x.date||"")>=args.start&&String(x.date||"")<=args.end);
+    if(!prices.length)throw new Error(`FinMind 查不到 ${args.stock} 在此期間的日行情。請確認代號已掛牌、回測日期涵蓋掛牌日，或稍後再試；新上市 ETF 可能需要等資料來源更新。`);
+    render(buildResult(prices,dividends,dividendResults,splits,args));
+  }catch(err){$("error").textContent=err.message||"回測失敗，請稍後再試。";$("error").classList.remove("hidden");$("empty").classList.remove("hidden");}
+  finally{$("loading").classList.add("hidden");$("run").disabled=false}
+});
+</script>
+</body>
+</html>
