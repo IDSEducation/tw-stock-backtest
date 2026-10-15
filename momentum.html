@@ -25,7 +25,7 @@
 </main>
 <script>
 const $=id=>document.getElementById(id),num=x=>{const n=Number(x);return Number.isFinite(n)?n:0},fmt=n=>new Intl.NumberFormat("zh-TW",{maximumFractionDigits:2}).format(n),pct=n=>(n>=0?"+":"")+n.toFixed(2)+"%";
-const CANDIDATES=["2330","2317","2454","2308","2881","2882","2891","2303","3711","2382","3231","2345","6669","2379","3034","2357","2376","2324","2395","3017","2356","2327","2368","2408","2344","2351","6147","3037","3661","3443","5274","2059","3529","6510","3324","4979","8046","8299","6488","3533","0050","0052","0056","00878","00919","00929","00940","00922","00935","009816"];
+const CANDIDATES=["2330","2317","2454","2308","2881","2882","2891","2303","3711","2382","3231","2345","6669","2379","3034","2357","2376","2324","2395","3017","2356","2327","2368","2408","2344","2351","6147","3037","3661","3443","5274","2059","3529","6510","3324","0050","0052","0056","00878","00919","4979","8046","8299","6488","3533","00929","00940","00922","00935","009816"];
 const CACHE_KEY="momentumAutoCacheV2",CACHE_MS=6*60*60*1000;
 async function fetchData(dataset,id,start,end){const u=new URL("https://api.finmindtrade.com/api/v4/data");u.searchParams.set("dataset",dataset);if(id)u.searchParams.set("data_id",id);if(start)u.searchParams.set("start_date",start);if(end)u.searchParams.set("end_date",end);const r=await fetch(u,{headers:{Accept:"application/json"}});let j;try{j=await r.json()}catch{throw Error("資料服務目前無法讀取回應")};if(!r.ok||j.status!==200)throw Error(j.msg||("資料服務回應 "+r.status+"（"+dataset+"）"));return Array.isArray(j.data)?j.data:[]}
 function iso(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
