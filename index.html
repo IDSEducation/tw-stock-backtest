@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="輸入台股代號、日期與本金，估算單筆投資的淨利、報酬率與股利。">
+  <title>台股單筆投資回測</title>
+  <style>
+    :root{--ink:#14231f;--muted:#75817d;--paper:#f5f7f4;--white:#fff;--line:#e4eae5;--green:#1e8065;--green2:#dff1e9;--red:#bb5549;--gold:#c99e48;--shadow:0 18px 48px #20362b12}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif}button,input{font:inherit}.shell{max-width:1120px;margin:auto;padding:28px 28px 60px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:36px}.brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:.02em}.brand-mark{width:38px;height:38px;border-radius:13px;background:var(--ink);display:grid;place-items:center;color:#bfe3d3;font-size:18px}.badge{font-size:12px;color:#59746a;border:1px solid #d9e5dd;border-radius:999px;padding:6px 11px;background:#ffffffa8}.hero{max-width:720px;margin-bottom:28px}.eyebrow{color:var(--green);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.hero h1{font-size:clamp(32px,5vw,50px);line-height:1.13;letter-spacing:-.04em;margin:12px 0}.hero p{max-width:650px;color:#66736d;margin:0;font-size:16px}.layout{display:grid;grid-template-columns:340px 1fr;gap:20px;align-items:start}.card{background:var(--white);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.form-card{padding:24px;position:sticky;top:20px}.section-title{font-size:14px;font-weight:800;margin:0 0 18px}.field{margin-bottom:16px}.field label{display:block;font-size:12px;font-weight:700;color:#53635c;margin-bottom:7px}.field input{width:100%;height:45px;border:1px solid #dce4de;background:#fcfdfc;border-radius:10px;padding:0 12px;color:var(--ink);outline:none}.field input:focus{border-color:var(--green);box-shadow:0 0 0 3px #1e80651b}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.advanced{border-top:1px solid var(--line);padding-top:14px;margin-top:2px}.advanced summary{cursor:pointer;font-size:12px;font-weight:750;color:#52635c;list-style:none}.advanced summary::-webkit-details-marker{display:none}.advanced summary:after{content:"＋";float:right;color:var(--green)}.advanced[open] summary:after{content:"−"}.advanced .field{margin:14px 0 0}.hint{font-size:11px;color:#82908a;margin:8px 0 0}.run{width:100%;border:0;border-radius:11px;background:var(--ink);color:#fff;padding:13px 16px;margin-top:16px;font-weight:750;cursor:pointer;transition:.18s}.run:hover{background:#245247;transform:translateY(-1px)}.run:disabled{opacity:.6;cursor:wait;transform:none}.fineprint{font-size:11px;color:#89948f;margin:13px 1px 0;line-height:1.6}.content{min-width:0}.empty{padding:44px 30px;min-height:440px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:linear-gradient(140deg,#fff,#f2f7f2)}.empty-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:16px;background:var(--green2);color:var(--green);font-size:24px;margin-bottom:18px}.empty h2{font-size:23px;margin:0 0 8px}.empty p{color:var(--muted);max-width:480px;margin:0}.steps{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;color:#64736c;font-size:12px}.steps span{display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;background:#7db69c;border-radius:50%}.hidden{display:none!important}.error{border:1px solid #f1d7d3;background:#fff5f3;color:#9b3d34;padding:14px 16px;border-radius:12px;margin-bottom:16px;font-size:13px}.loading{padding:40px;text-align:center;color:var(--muted)}.spinner{display:inline-block;width:18px;height:18px;border:2px solid #d8e3dc;border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite;vertical-align:-4px;margin-right:9px}@keyframes spin{to{transform:rotate(360deg)}}.results{display:grid;gap:16px}.headline{padding:24px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.stockline{display:flex;align-items:center;gap:9px;color:#6b7771;font-size:13px}.stockline strong{font-size:16px;color:var(--ink)}.profit{font-size:clamp(29px,4vw,40px);font-weight:800;letter-spacing:-.035em;line-height:1.1;margin-top:12px}.profit.pos{color:var(--green)}.profit.neg{color:var(--red)}.sub{color:var(--muted);font-size:12px;margin-top:7px}.return-pill{border-radius:12px;background:var(--green2);color:var(--green);padding:9px 13px;font-size:15px;font-weight:800;white-space:nowrap}.return-pill.neg{background:#fbebe8;color:var(--red)}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric{padding:17px 18px}.metric label{display:block;color:var(--muted);font-size:11px;margin-bottom:8px}.metric strong{font-size:19px;letter-spacing:-.02em}.metric small{display:block;font-size:11px;color:#89948f;margin-top:3px}.panel{padding:20px 22px}.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.panel h3{font-size:14px;margin:0}.panel-tag{font-size:11px;color:var(--muted)}.chart{width:100%;height:185px;display:block;overflow:visible}.chart-labels{display:flex;justify-content:space-between;color:#9aa49f;font-size:10px}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12px;white-space:nowrap}th,td{text-align:right;padding:9px 10px;border-bottom:1px solid #eef1ee}th:first-child,td:first-child{text-align:left}th{font-size:10px;color:#839089;font-weight:700}td:first-child{color:#52625b}.note{padding:14px 17px;color:#65726c;font-size:11px;background:#eff4f0;border-radius:12px;line-height:1.65}.status{font-size:12px;color:var(--muted);margin-top:10px;min-height:18px}.footer{margin-top:30px;color:#97a19b;font-size:11px;text-align:center}.source{color:#76877e;text-decoration:underline;text-underline-offset:2px}@media(max-width:840px){.layout{grid-template-columns:1fr}.form-card{position:static}.metrics{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.shell{padding:17px 14px 40px}.top{margin-bottom:26px}.badge{font-size:10px}.form-card{padding:19px}.headline{padding:19px;flex-direction:column}.metrics{gap:8px}.metric{padding:14px}.metric strong{font-size:17px}.panel{padding:17px}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="top"><div class="brand"><div class="brand-mark">↗</div><span>投資實驗室</span></div><span class="badge">台股 · 單筆回測</span></header>
+  <section class="hero"><div class="eyebrow">HISTORICAL INVESTMENT SIMULATOR</div><h1>如果當時買進，<br>現在會有多少？</h1><p>設定股票、投資期間和本金，查看股利、手續費與交易稅後的實際淨損益。</p></section>
+  <div class="layout">
+    <section class="card form-card">
+      <h2 class="section-title">回測條件</h2>
+      <form id="form">
+        <div class="field"><label for="stock">台股代號</label><input id="stock" value="2330" inputmode="numeric" maxlength="6" required placeholder="例如 2330"></div>
+        <div class="two"><div class="field"><label for="start">開始日期</label><input id="start" type="date" required></div><div class="field"><label for="end">結束日期</label><input id="end" type="date" required></div></div>
+        <div class="field"><label for="amount">單筆投入本金（新台幣，10萬～2,000萬）</label><input id="amount" type="number" min="100000" max="20000000" step="10000" value="100000" required></div>
+        <details class="advanced"><summary>交易成本設定</summary>
+          <div class="two"><div class="field"><label for="buyFee">買進手續費（%）</label><input id="buyFee" type="number" min="0" step="0.0001" value="0.1425"></div><div class="field"><label for="sellFee">賣出手續費（%）</label><input id="sellFee" type="number" min="0" step="0.0001" value="0.1425"></div></div>
+          <div class="field"><label for="tax">股票交易稅（%）</label><input id="tax" type="number" min="0" step="0.01" value="0.3"></div>
+          <p class="hint">可依券商折扣修改手續費。一般股票賣出交易稅預設 0.3%。</p>
+        </details>
+        <button class="run" id="run" type="submit">開始回測 <span aria-hidden="true">→</span></button>
+        <p class="fineprint">按開始日收盤買進，結束日收盤（或之前最近交易日）賣出。買進整股，未用本金會保留為現金。</p>
+      </form>
+    </section>
+    <section class="content">
+      <div id="error" class="error hidden" role="alert"></div>
+      <div id="loading" class="card loading hidden"><span class="spinner"></span><span id="loadingText">正在取得行情與股利資料…</span></div>
+      <div id="empty" class="card empty"><div class="empty-icon">⌁</div><h2>準備好測試你的想法</h2><p>填入股票代號、日期與本金後，這裡會顯示淨利、淨報酬率、持有股數，以及股利和交易成本明細。</p><div class="steps"><span><i class="dot"></i>行情與股利</span><span><i class="dot"></i>整股買進</span><span><i class="dot"></i>成本後淨損益</span></div></div>
+      <div id="results" class="results hidden" aria-live="polite"></div>
+    </section>
+  </div>
+  <footer class="footer">歷史回測僅供研究，過去績效不代表未來結果。資料來源：<a class="source" href="https://finmind.github.io/" target="_blank" rel="noopener">FinMind</a></footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const now=new Date(), today=now.toISOString().slice(0,10); const five=new Date(now); five.setFullYear(five.getFullYear()-5);
+$("start").value=five.toISOString().slice(0,10); $("end").value=today;
+const fmt=n=>new Intl.NumberFormat("zh-TW",{maximumFractionDigits:2}).format(n);
+const pct=n=>(n>=0?"+":"")+n.toFixed(2)+"%";
+const safeNum=x=>{const n=Number(x);return Number.isFinite(n)?n:0};
+async function fetchData(dataset,id,start,end){
+  const u=new URL("https://api.finmindtrade.com/api/v4/data");
+  Object.entries({dataset,data_id:id,start_date:start,end_date:end}).forEach(([k,v])=>u.searchParams.set(k,v));
+  const res=await fetch(u,{headers:{Accept:"application/json"}});
+  if(!res.ok){let msg="";try{msg=(await res.json()).msg||""}catch{}throw new Error(`資料服務回應 ${res.status}${msg?"："+msg:""}（${dataset}）`)}
+  const json=await res.json(); if(json.status!==200)throw new Error(json.msg||`${dataset} 查詢失敗`);
+  return Array.isArray(json.data)?json.data:[];
+}
+function dateCmp(a,b){return a.localeCompare(b)}
+function buildResult(priceRows,divRows,args){
+  const map=new Map();
+  for(const r of priceRows){const d=String(r.date||"").slice(0,10),c=safeNum(r.close),o=safeNum(r.open);if(d&&c>0)map.set(d,{date:d,close:c,open:o||c})}
+  const prices=[...map.values()].sort((a,b)=>dateCmp(a.date,b.date));
+  const entry=prices.find(x=>x.date>=args.start), exit=[...prices].reverse().find(x=>x.date<=args.end);
+  if(!entry||!exit)throw new Error("指定區間找不到可用行情，請調整日期或確認股票代號。");
+  if(entry.date>exit.date)throw new Error("開始日期之後沒有可用的結束行情，請擴大回測區間。");
+  const buyRate=args.buyFee/100,sellRate=args.sellFee/100,taxRate=args.tax/100;
+  const shares=Math.floor(args.amount/(entry.close*(1+buyRate)));
+  if(shares<1)throw new Error("投入金額不足以買進 1 股（含手續費）。");
+  const buyValue=shares*entry.close,buyFee=buyValue*buyRate,cashLeft=args.amount-buyValue-buyFee;
+  let totalCashDividend=0,stockBonusShares=0,dividendEvents=0,currentShares=shares;
+  const eventMap=new Map(),heldDividends=[];
+  for(const d of divRows){
+    const cashDate=String(d.CashExDividendTradingDate||"").slice(0,10);
+    const stockDate=String(d.StockExDividendTradingDate||"").slice(0,10);
+    const cashPerShare=safeNum(d.CashEarningsDistribution)+safeNum(d.CashStatutorySurplus);
+    const stockPerShare=safeNum(d.StockEarningsDistribution)+safeNum(d.StockStatutorySurplus);
+    if(cashDate&&cashDate>entry.date&&cashDate<=exit.date&&cashPerShare>0){const ev=eventMap.get(cashDate)||{cashPerShare:0,stockPerShare:0};ev.cashPerShare+=cashPerShare;eventMap.set(cashDate,ev)}
+    if(stockDate&&stockDate>entry.date&&stockDate<=exit.date&&stockPerShare>0){const ev=eventMap.get(stockDate)||{cashPerShare:0,stockPerShare:0};ev.stockPerShare+=stockPerShare;eventMap.set(stockDate,ev)}
+  }
+  for(const [date,ev] of [...eventMap.entries()].sort((a,b)=>dateCmp(a[0],b[0]))){
+    const cash=ev.cashPerShare*currentShares;
+    const bonus=ev.stockPerShare>0?currentShares*ev.stockPerShare/10:0;
+    totalCashDividend+=cash;stockBonusShares+=bonus;currentShares+=bonus;
+    if(cash||bonus){dividendEvents++;heldDividends.push({date,cash,bonus})}
+  }
+  const endingShares=shares+stockBonusShares;
+  const sellValue=endingShares*exit.close,sellFee=sellValue*sellRate,transactionTax=sellValue*taxRate;
+  const endingAssets=cashLeft+totalCashDividend+sellValue-sellFee-transactionTax;
+  const netProfit=endingAssets-args.amount,netReturn=netProfit/args.amount*100;
+  const held=prices.filter(x=>x.date>=entry.date&&x.date<=exit.date);
+  return {args,entry,exit,shares,endingShares,stockBonusShares,buyValue,buyFee,cashLeft,totalCashDividend,sellValue,sellFee,transactionTax,endingAssets,netProfit,netReturn,held,dividendEvents,dividends:heldDividends};
+}
+function chartSvg(points){
+  if(!points.length)return "";const vals=points.map(x=>x.close),min=Math.min(...vals),max=Math.max(...vals),span=max-min||1,w=700,h=165,pad=8;
+  const xy=points.map((x,i)=>`${pad+i/(Math.max(1,points.length-1))*(w-2*pad)},${h-pad-(x.close-min)/span*(h-2*pad)}`);
+  const up=vals.at(-1)>=vals[0],color=up?"#1e8065":"#bb5549",path="M"+xy.join(" L");const area=path+` L ${w-pad},${h-pad} L ${pad},${h-pad} Z`;
+  const sampled=points.length>120?points.filter((_,i)=>i%Math.ceil(points.length/100)===0||i===points.length-1):points;
+  return `<svg class="chart" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="持有期間股價走勢"><defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${color}" stop-opacity=".17"/><stop offset="1" stop-color="${color}" stop-opacity="0"/></linearGradient></defs><path d="${area}" fill="url(#fill)"/><path d="${path}" fill="none" stroke="${color}" stroke-width="2.2" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><line x1="0" x2="${w}" y1="${h-1}" y2="${h-1}" stroke="#e8eee9"/></svg><div class="chart-labels"><span>${points[0].date}</span><span>${points.at(-1).date}</span></div>`;
+}
+function render(r){
+  const positive=r.netProfit>=0;const returnClass=positive?"":"neg";
+  const tr=(label,value,sub="")=>`<div class="metric card"><label>${label}</label><strong>${value}</strong>${sub?`<small>${sub}</small>`:""}</div>`;
+  const drows=r.dividends.length?r.dividends.map(d=>`<tr><td>${d.date}</td><td>${fmt(d.cash)}</td><td>${d.bonus?fmt(d.bonus):"—"}</td></tr>`).join(""):`<tr><td colspan="3" style="text-align:center;color:#89948f;padding:18px">持有期間沒有可辨識的除權息資料</td></tr>`;
+  $("results").innerHTML=`<section class="card headline"><div><div class="stockline"><strong>${r.args.stock}</strong><span>·</span><span>${r.entry.date} → ${r.exit.date}</span></div><div class="profit ${positive?"pos":"neg"}">${positive?"+":"−"}NT$ ${fmt(Math.abs(r.netProfit))}</div><div class="sub">期末資產 NT$ ${fmt(r.endingAssets)}　·　本金 NT$ ${fmt(r.args.amount)}</div></div><div class="return-pill ${returnClass}">${pct(r.netReturn)}</div></section>
+  <div class="metrics">${tr("買進股數",fmt(r.shares)+" 股",`買進價 NT$ ${fmt(r.entry.close)}`)}${tr("期末持股",fmt(r.endingShares)+" 股",r.stockBonusShares?`含股票股利 ${fmt(r.stockBonusShares)} 股`:"未再投入股利")}${tr("現金股利",`NT$ ${fmt(r.totalCashDividend)}`,`${r.dividendEvents} 次除權息事件`)}${tr("交易成本",`NT$ ${fmt(r.buyFee+r.sellFee+r.transactionTax)}`,`買手續費 ${fmt(r.buyFee)} · 賣出費稅 ${fmt(r.sellFee+r.transactionTax)}`)}</div>
+  <section class="card panel"><div class="panel-head"><h3>持有期間股價</h3><span class="panel-tag">每日收盤價</span></div>${chartSvg(r.held)}</section>
+  <section class="card panel"><div class="panel-head"><h3>淨損益拆解</h3><span class="panel-tag">新台幣</span></div><div class="table-wrap"><table><thead><tr><th>項目</th><th>金額</th><th>說明</th></tr></thead><tbody><tr><td>期末持股市值</td><td>${fmt(r.sellValue)}</td><td>${fmt(r.endingShares)} 股 × ${fmt(r.exit.close)}</td></tr><tr><td>現金股利</td><td>${fmt(r.totalCashDividend)}</td><td>依除息日持股計算</td></tr><tr><td>未用本金餘額</td><td>${fmt(r.cashLeft)}</td><td>買進後保留現金</td></tr><tr><td>買進手續費</td><td>−${fmt(r.buyFee)}</td><td>${r.args.buyFee}%</td></tr><tr><td>賣出手續費</td><td>−${fmt(r.sellFee)}</td><td>${r.args.sellFee}%</td></tr><tr><td>證券交易稅</td><td>−${fmt(r.transactionTax)}</td><td>${r.args.tax}%</td></tr><tr><td><strong>淨利</strong></td><td><strong>${fmt(r.netProfit)}</strong></td><td>淨報酬率 ${pct(r.netReturn)}</td></tr></tbody></table></div></section>
+  <section class="card panel"><div class="panel-head"><h3>持有期間股利</h3><span class="panel-tag">按除息日歸屬</span></div><div class="table-wrap"><table><thead><tr><th>除權息日</th><th>現金股利（NT$）</th><th>股票股利（股）</th></tr></thead><tbody>${drows}</tbody></table></div></section>
+  <div class="note">計算方式：開始日當天或之後首個交易日收盤買進，結束日當天或之前最後交易日收盤賣出；本金先扣買進手續費並買入整股，剩餘現金計入期末資產。現金股利依除息日計入，即使實際發放日在回測結束日之後也視為應收股利；股票股利按每股面額 NT$10 換算理論股數並計入期末市值。未計個人綜所稅、最低手續費、券商折扣及零股配發差異；資料與公司行動可能有修訂，結果為估算。</div>`;
+  $("results").classList.remove("hidden");$("empty").classList.add("hidden");
+}
+$("form").addEventListener("submit",async e=>{
+  e.preventDefault();$("error").classList.add("hidden");$("results").classList.add("hidden");$("empty").classList.add("hidden");$("loading").classList.remove("hidden");$("run").disabled=true;
+  const args={stock:$("stock").value.trim(),start:$("start").value,end:$("end").value,amount:Number($("amount").value),buyFee:Number($("buyFee").value),sellFee:Number($("sellFee").value),tax:Number($("tax").value)};
+  try{
+    if(!/^\d{4,6}$/.test(args.stock))throw new Error("請輸入 4 至 6 位數的台股代號。");
+    if(!args.start||!args.end||args.start>args.end)throw new Error("請確認日期範圍正確，開始日期需早於結束日期。");
+    if(!Number.isFinite(args.amount)||args.amount<100000||args.amount>20000000)throw new Error("單筆本金請輸入新台幣 10 萬至 2,000 萬。");
+    if([args.buyFee,args.sellFee,args.tax].some(x=>!Number.isFinite(x)||x<0))throw new Error("請確認交易成本設定為有效的非負數。");
+    $("loadingText").textContent=`正在下載 ${args.stock} 的行情與股利資料…`;
+    const [p,d]=await Promise.all([fetchData("TaiwanStockPrice",args.stock,args.start,args.end),fetchData("TaiwanStockDividend",args.stock,args.start,args.end)]);
+    if(!p.length)throw new Error(`查不到 ${args.stock} 在此期間的日行情。請確認代號與日期，或稍後再試。`);
+    render(buildResult(p,d,args));
+  }catch(err){$("error").textContent=err.message||"回測失敗，請稍後再試。";$("error").classList.remove("hidden");$("empty").classList.remove("hidden");}
+  finally{$("loading").classList.add("hidden");$("run").disabled=false}
+});
+</script>
+</body>
+</html>
