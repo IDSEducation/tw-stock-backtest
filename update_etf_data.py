@@ -248,7 +248,7 @@ def main() -> None:
             "code": fund["code"], "name": fund["name"],
             "management": management, "fund_type_code": fund["type_code"], "distribution_policy": policy,
             "distribution_policy_source": "TWSE ETF information" if fund["code"] in TWSE_POLICY_OVERRIDES else "SITCA monthly report",
-            "listing_date": fund.get("listing_date"),
+            "listing_date": None if pd.isna(fund.get("listing_date")) else str(fund.get("listing_date")),
             "distribution_policy_status": policy_status,
             "aum_twd": fund["aum"], "nav_twd": nav,
             "beneficiaries": fund["beneficiaries"],
