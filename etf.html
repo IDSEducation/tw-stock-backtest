@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="台灣 ETF 清單，整理主動與被動 ETF、資產規模、受益人數、配息紀錄及殖利率。">
+  <title>台灣 ETF 一覽｜投資實驗室</title>
+  <style>
+    :root{--ink:#14231f;--muted:#75817d;--paper:#f5f7f4;--white:#fff;--line:#e4eae5;--green:#1e8065;--green2:#dff1e9;--red:#bb5549;--gold:#c99e48;--shadow:0 18px 48px #20362b12}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif}button,input,select{font:inherit}.shell{max-width:1320px;margin:auto;padding:28px 28px 60px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:36px}.brand{display:flex;align-items:center;gap:12px;font-weight:750;white-space:nowrap}.brand-mark{width:38px;height:38px;border-radius:13px;background:var(--ink);display:grid;place-items:center;color:#bfe3d3;font-size:18px}.mode-switch{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:min(850px,100%)}.mode-btn{min-height:68px;display:flex;align-items:center;gap:11px;padding:10px 14px;border:2px solid #dae5df;border-radius:16px;text-decoration:none;color:#23352d;background:#fff;box-shadow:0 6px 18px #20362b0c;transition:.18s}.mode-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px #20362b18}.mode-btn strong{display:block;font-size:14px;line-height:1.3}.mode-btn small{display:block;margin-top:3px;color:#607069;font-size:10px}.mode-icon{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;border-radius:11px;background:#eef3ef;font-weight:900;font-size:17px}.mode-btn.single{border-color:#b6d7ca;background:linear-gradient(130deg,#fff,#eff8f3)}.mode-btn.single .mode-icon{background:#dff1e9;color:#1e8065}.mode-btn.recurring{border-color:#f0d6a6;background:linear-gradient(130deg,#fff,#fff8e9)}.mode-btn.recurring .mode-icon{background:#ffedc5;color:#a96b0c}.mode-btn.etf{border-color:#bdd8ef;background:linear-gradient(130deg,#fff,#eff7ff)}.mode-btn.etf .mode-icon{background:#dceeff;color:#28618e}.mode-btn.active{outline:3px solid #234c3f20}.mode-btn.active::after{content:"目前所在頁面";font-size:9px;font-weight:800;color:#50675b;background:#ffffffbc;border-radius:999px;padding:4px 7px;margin-left:auto;white-space:nowrap}
+    .hero{max-width:830px;margin-bottom:25px}.eyebrow{color:var(--green);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.hero h1{font-size:clamp(31px,4.5vw,46px);line-height:1.15;letter-spacing:-.04em;margin:10px 0}.hero p{color:#66736d;margin:0;font-size:15px}.statusline{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.pill{font-size:11px;padding:6px 10px;border-radius:999px;background:#eaf2ed;color:#536c60}.pill.blue{background:#e9f2fa;color:#426888}.card{background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.metric{padding:16px 18px}.metric label{display:block;color:var(--muted);font-size:11px;margin-bottom:7px}.metric strong{font-size:22px;letter-spacing:-.02em}.metric small{display:block;color:#89948f;font-size:10px;margin-top:3px}.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:16px;margin-bottom:12px}.toolbar input,.toolbar select{height:42px;border:1px solid #dce4de;background:#fcfdfc;border-radius:10px;padding:0 12px;color:var(--ink);outline:none}.toolbar input{flex:1 1 240px}.toolbar select{min-width:135px}.toolbar input:focus,.toolbar select:focus{border-color:var(--green);box-shadow:0 0 0 3px #1e80651b}.button{height:42px;border:0;border-radius:10px;background:var(--ink);color:#fff;padding:0 15px;font-weight:750;cursor:pointer}.button.secondary{background:#e9f0eb;color:#315446}.count{margin-left:auto;font-size:12px;color:var(--muted)}.table-card{overflow:hidden}.table-wrap{overflow:auto;max-height:68vh}table{border-collapse:separate;border-spacing:0;width:100%;min-width:1110px;font-size:12px;white-space:nowrap}th,td{padding:11px 12px;border-bottom:1px solid #eef1ee;text-align:right}th{position:sticky;top:0;z-index:1;background:#f8faf8;font-size:10px;color:#748078;cursor:pointer;user-select:none}th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}td:first-child{font-weight:800;color:#315446}td:nth-child(2){font-weight:650;max-width:240px;overflow:hidden;text-overflow:ellipsis}.muted{color:#98a29c}.tag{display:inline-block;padding:3px 7px;border-radius:999px;font-size:10px;font-weight:750}.tag.active{background:#e9eefc;color:#4e5f9b}.tag.passive{background:#eaf3ed;color:#398062}.tag.yes{background:#fff2da;color:#98670f}.tag.no{background:#f0f1ef;color:#7c8580}.empty{padding:44px 20px;text-align:center;color:var(--muted)}.error{padding:16px 18px;border:1px solid #f1d7d3;background:#fff5f3;color:#9b3d34;border-radius:12px;margin-bottom:14px}.notice{margin-top:14px;padding:16px 18px;background:#edf3ef;color:#65726c;border-radius:13px;font-size:11px;line-height:1.75}.notice strong{color:#344e41}.sources{display:flex;gap:13px;flex-wrap:wrap;margin-top:9px}.sources a{color:#356e59;text-decoration:underline;text-underline-offset:2px}.footer{margin-top:24px;color:#97a19b;font-size:11px;text-align:center}.loading{text-align:center;padding:46px;color:var(--muted)}@media(max-width:900px){.top{align-items:flex-start;flex-direction:column}.mode-switch{width:100%;max-width:none}.summary{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.shell{padding:16px 12px 38px}.mode-switch{grid-template-columns:1fr}.mode-btn{min-height:62px}.hero{margin-bottom:19px}.metric{padding:13px}.metric strong{font-size:19px}.toolbar{padding:12px}.toolbar select{flex:1}.count{width:100%;margin:0}.table-wrap{max-height:70vh}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="top">
+    <div class="brand"><div class="brand-mark">↗</div><span>投資實驗室</span></div>
+    <nav class="mode-switch" aria-label="投資工具切換">
+      <a class="mode-btn single" href="./"><span class="mode-icon">1</span><span><strong>單筆投入回測</strong><small>一次投入本金，查看期末淨利</small></span></a>
+      <a class="mode-btn recurring" href="dca.html"><span class="mode-icon">↻</span><span><strong>定期定額回測</strong><small>固定頻率投入，累積持股</small></span></a>
+      <a class="mode-btn etf active" href="etf.html" aria-current="page"><span class="mode-icon">ETF</span><span><strong>台灣 ETF 一覽</strong><small>規模、受益人、配息與殖利率</small></span></a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="eyebrow">TAIWAN ETF DIRECTORY</div>
+    <h1>台灣 ETF 一覽</h1>
+    <p>集中查看台灣掛牌 ETF 的管理方式、基金規模、受益人數、配息紀錄與殖利率。支援搜尋、篩選、排序與 CSV 下載。</p>
+    <div class="statusline"><span class="pill" id="dataDate">正在讀取資料日期…</span><span class="pill blue" id="refreshDate">資料更新時間：—</span></div>
+  </section>
+  <div id="error" class="error" hidden></div>
+  <section class="summary" aria-label="ETF 市場摘要">
+    <div class="card metric"><label>ETF 檔數</label><strong id="totalCount">—</strong><small>以資料來源當月清單計算</small></div>
+    <div class="card metric"><label>基金資產規模</label><strong id="totalAum">—</strong><small>所有清單 ETF 規模加總</small></div>
+    <div class="card metric"><label>主動式 ETF</label><strong id="activeCount">—</strong><small>依台灣主動式 ETF 代碼尾碼 A 分類</small></div>
+    <div class="card metric"><label>近 12 個月有配息</label><strong id="paidCount">—</strong><small>依已公告的除息紀錄統計</small></div>
+  </section>
+  <section class="card toolbar" aria-label="篩選 ETF">
+    <input id="search" type="search" placeholder="搜尋代號或 ETF 名稱" aria-label="搜尋代號或 ETF 名稱">
+    <select id="management"><option value="all">全部管理方式</option><option value="主動式">主動式</option><option value="被動式／其他">被動式／其他</option></select>
+    <select id="payout"><option value="all">全部配息狀態</option><option value="yes">近 12 個月有配息</option><option value="no">近 12 個月未見配息</option></select>
+    <select id="frequency"><option value="all">全部配息頻率</option><option>月配</option><option>雙月配</option><option>季配</option><option>半年配</option><option>年配</option><option>未標示</option></select>
+    <button class="button secondary" id="download">下載 CSV</button>
+    <span class="count" id="shownCount">讀取資料中…</span>
+  </section>
+  <section class="card table-card"><div class="table-wrap"><table id="table"><thead><tr>
+    <th data-key="code">代號 ↕</th><th data-key="name">ETF 名稱 ↕</th><th data-key="management">主動／被動 ↕</th><th data-key="aum_twd">資產規模（億元） ↕</th><th data-key="beneficiaries">受益人數 ↕</th><th data-key="distribution_policy">配息規則 ↕</th><th data-key="has_paid_in_12m">近 12 月有配息 ↕</th><th data-key="last_ex_date">最近除息日 ↕</th><th data-key="last_distribution_per_unit">最近每單位配息 ↕</th><th data-key="last_distribution_yield_pct">最近一次配息殖利率 ↕</th><th data-key="trailing_12m_yield_pct">近 12 月配息殖利率 ↕</th><th data-key="nav_twd">最近單位淨值 ↕</th>
+  </tr></thead><tbody id="rows"><tr><td colspan="12" class="loading">正在載入 ETF 資料…</td></tr></tbody></table></div></section>
+  <section class="notice">
+    <strong>資料口徑與閱讀方式</strong><br>
+    「資產規模」是基金規模（AUM），不是 ETF 股票在市場上的總市值。規模、淨值與受益人數依投信投顧公會月報，畫面會標示資料月份；配息紀錄採公告資料，資料更新可能晚於公告日。<br>
+    「最近一次配息殖利率」＝最近每單位配息 ÷ 最近單位淨值；「近 12 月配息殖利率」＝過去 12 個月每單位配息總額 ÷ 最近單位淨值。這兩項以淨值作分母，屬歷史現金分配比率，並非總報酬或未來保證。<br>
+    管理方式目前以台灣主動式 ETF 代碼尾碼 A 辨識，名稱與配息規則保留來源資料供核對；如主管機關或交易所日後更改代碼慣例，分類規則也需同步調整。新 ETF 會在官方月報納入後，隨定時資料更新自動出現在清單。
+    <div class="sources">資料來源：<a href="https://www.sitca.org.tw/ROC/SITCA_ETF/etf-section-stats.html" target="_blank" rel="noopener">投信投顧公會 ETF 專區</a><a href="https://data.gov.tw/dataset/160547" target="_blank" rel="noopener">政府資料開放平台：ETF 配息資料</a><a href="https://data.gov.tw/dataset/11452" target="_blank" rel="noopener">集保戶股權分散表</a><a href="https://www.twse.com.tw/zh/ETFortune/products" target="_blank" rel="noopener">證交所 ETF 篩選器</a><a href="https://info.tpex.org.tw/ETF/zh/" target="_blank" rel="noopener">櫃買 ETF 訊息中心</a></div>
+  </section>
+  <footer class="footer">資料僅供整理與研究，請以基金公司及主管機關公告為準；殖利率不代表投資報酬保證。</footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);let allRows=[],sortKey="aum_twd",sortDir=-1;
+const fmt=(n,d=2)=>n==null||!Number.isFinite(Number(n))?"—":new Intl.NumberFormat("zh-TW",{minimumFractionDigits:0,maximumFractionDigits:d}).format(Number(n));
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function frequencyOf(s){const t=String(s||"");for(const f of ["月配","雙月配","季配","半年配","年配"])if(t.includes(f))return f;return "未標示"}
+function filterRows(){const q=$("search").value.trim().toLowerCase(),m=$("management").value,p=$("payout").value,f=$("frequency").value;return allRows.filter(x=>(!q||`${x.code} ${x.name}`.toLowerCase().includes(q))&&(m==="all"||x.management===m)&&(p==="all"||(p==="yes")===Boolean(x.has_paid_in_12m))&&(f==="all"||frequencyOf(x.distribution_policy)===f))}
+function render(){let rows=filterRows();rows.sort((a,b)=>{const x=a[sortKey],y=b[sortKey];if(x==null)return 1;if(y==null)return -1;if(typeof x==="number"||typeof y==="number")return (Number(x)-Number(y))*sortDir;return String(x).localeCompare(String(y),"zh-Hant")*sortDir});
+  $("shownCount").textContent=`顯示 ${rows.length} / ${allRows.length} 檔`;
+  if(!rows.length){$("rows").innerHTML=`<tr><td colspan="12" class="empty">沒有符合條件的 ETF，或尚未取得資料。</td></tr>`;return}
+  $("rows").innerHTML=rows.map(x=>`<tr><td>${esc(x.code)}</td><td title="${esc(x.name)}">${esc(x.name)}</td><td><span class="tag ${x.management==="主動式"?"active":"passive"}">${esc(x.management)}</span></td><td>${fmt(x.aum_twd/100000000)}</td><td>${fmt(x.beneficiaries,0)}</td><td>${esc(x.distribution_policy||"未標示")}</td><td><span class="tag ${x.has_paid_in_12m?"yes":"no"}">${x.has_paid_in_12m?"有":"未見"}</span></td><td>${esc(x.last_ex_date||"—")}</td><td>${fmt(x.last_distribution_per_unit,4)}</td><td>${x.last_distribution_yield_pct==null?"—":fmt(x.last_distribution_yield_pct,2)+"%"}</td><td>${x.trailing_12m_yield_pct==null?"—":fmt(x.trailing_12m_yield_pct,2)+"%"}</td><td>${fmt(x.nav_twd,4)}</td></tr>`).join("");
+}
+function csv(){const rows=filterRows(),cols=[["代號","code"],["ETF名稱","name"],["管理方式","management"],["資產規模新台幣","aum_twd"],["受益人數","beneficiaries"],["配息規則","distribution_policy"],["近12月有配息","has_paid_in_12m"],["最近除息日","last_ex_date"],["最近每單位配息","last_distribution_per_unit"],["最近配息殖利率%","last_distribution_yield_pct"],["近12月配息殖利率%","trailing_12m_yield_pct"],["單位淨值","nav_twd"]];const q=v=>'"'+String(v??"").replace(/"/g,'""')+'"';const text=[cols.map(x=>q(x[0])).join(","),...rows.map(r=>cols.map(x=>q(r[x[1]])).join(","))].join("\r\n");const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+text],{type:"text/csv;charset=utf-8"}));a.download="taiwan_etf_list.csv";a.click();URL.revokeObjectURL(a.href)}
+async function init(){try{const res=await fetch("data/etf-data.json?cache="+Date.now());if(!res.ok)throw new Error("尚未建立 ETF 資料檔，請稍後再重新整理。");const data=await res.json();allRows=Array.isArray(data.etfs)?data.etfs:[];if(!allRows.length)throw new Error("資料來源目前沒有 ETF 清單，請稍後重試。");$("dataDate").textContent=`基金規模／人數資料月份：${data.data_month||"—"}`;$("refreshDate").textContent=`資料更新時間：${data.generated_at?new Date(data.generated_at).toLocaleString("zh-TW"):"—"}`;$("totalCount").textContent=fmt(allRows.length,0)+" 檔";$("totalAum").textContent=fmt(allRows.reduce((s,x)=>s+(Number(x.aum_twd)||0),0)/1e8,0)+" 億";$("activeCount").textContent=fmt(allRows.filter(x=>x.management==="主動式").length,0)+" 檔";$("paidCount").textContent=fmt(allRows.filter(x=>x.has_paid_in_12m).length,0)+" 檔";render()}catch(e){$("error").textContent=e.message||"ETF 資料載入失敗，請稍後重試。";$("error").hidden=false;$("rows").innerHTML=`<tr><td colspan="12" class="empty">目前無法載入資料。你仍可使用下方官方來源查詢。</td></tr>`;$("shownCount").textContent="資料尚未載入"}}
+for(const id of ["search","management","payout","frequency"])$(id).addEventListener(id==="search"?"input":"change",render);$("download").addEventListener("click",csv);document.querySelectorAll("th[data-key]").forEach(th=>th.addEventListener("click",()=>{const key=th.dataset.key;if(sortKey===key)sortDir*=-1;else{sortKey=key;sortDir=typeof allRows[0]?.[key]==="number"?-1:1}render()}));init();
+</script>
+</body>
+</html>
