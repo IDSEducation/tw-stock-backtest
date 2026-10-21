@@ -177,7 +177,7 @@ def main() -> None:
             "last_ex_date": last.parsed_date.iloc[0].date().isoformat() if not last.empty else None,
             "last_distribution_per_unit": last_amount,
             "last_distribution_yield_pct": round(last_amount / nav * 100, 4) if last_amount is not None and nav else None,
-            "trailing_12m_distribution_per_unit": round(twelve_month_sum, 6),
+            "trailing_12m_distribution_per_unit": round(twelve_month_sum, 6) if not trailing.empty else None,
             "trailing_12m_yield_pct": round(twelve_month_sum / nav * 100, 4) if nav and not trailing.empty else None,
             "has_paid_in_12m": bool(not trailing.empty),
         })
