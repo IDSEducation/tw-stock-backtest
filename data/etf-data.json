@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-21T03:44:14+00:00",
+  "generated_at": "2026-10-21T03:45:39+00:00",
   "data_month": "2026-09",
   "sources": {
     "aum_and_beneficiaries": "SITCA ETF monthly detail",
@@ -58,7 +58,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -75,7 +75,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -92,7 +92,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -109,7 +109,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -126,7 +126,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -143,7 +143,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -160,7 +160,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -177,7 +177,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -194,7 +194,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -211,7 +211,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -228,7 +228,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -245,7 +245,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -262,7 +262,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -279,7 +279,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -296,7 +296,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -313,7 +313,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -330,7 +330,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -347,7 +347,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -364,7 +364,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -381,7 +381,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -398,7 +398,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -415,7 +415,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -432,7 +432,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -449,7 +449,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -466,7 +466,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -483,7 +483,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -500,7 +500,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -517,7 +517,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -534,7 +534,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -551,7 +551,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -568,7 +568,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -585,7 +585,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -602,7 +602,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -619,7 +619,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -636,7 +636,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -653,7 +653,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -670,7 +670,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -687,7 +687,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -704,7 +704,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -721,7 +721,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -738,7 +738,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -755,7 +755,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -772,7 +772,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -789,7 +789,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -806,7 +806,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -823,7 +823,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -840,7 +840,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -857,7 +857,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -874,7 +874,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -891,7 +891,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -908,7 +908,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -925,7 +925,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -942,7 +942,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -959,7 +959,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -976,7 +976,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -993,7 +993,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1010,7 +1010,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1027,7 +1027,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1044,7 +1044,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1061,7 +1061,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1078,7 +1078,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1095,7 +1095,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1129,7 +1129,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1146,7 +1146,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1163,7 +1163,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1180,7 +1180,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1197,7 +1197,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1214,7 +1214,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1231,7 +1231,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1248,7 +1248,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1282,7 +1282,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1299,7 +1299,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1316,7 +1316,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1333,7 +1333,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1350,7 +1350,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1367,7 +1367,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1401,7 +1401,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1418,7 +1418,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1435,7 +1435,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1452,7 +1452,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1469,7 +1469,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1486,7 +1486,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1503,7 +1503,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1520,7 +1520,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1537,7 +1537,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1554,7 +1554,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1571,7 +1571,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1588,7 +1588,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1605,7 +1605,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1622,7 +1622,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1639,7 +1639,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1656,7 +1656,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1673,7 +1673,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1690,7 +1690,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1741,7 +1741,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1758,7 +1758,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1775,7 +1775,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1792,7 +1792,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1809,7 +1809,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1826,7 +1826,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1877,7 +1877,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1894,7 +1894,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1911,7 +1911,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1928,7 +1928,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1945,7 +1945,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -1962,7 +1962,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2030,7 +2030,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2115,7 +2115,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2132,7 +2132,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2166,7 +2166,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2285,7 +2285,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2319,7 +2319,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2336,7 +2336,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2353,7 +2353,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2370,7 +2370,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2404,7 +2404,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2421,7 +2421,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2438,7 +2438,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2455,7 +2455,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2472,7 +2472,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2523,7 +2523,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2540,7 +2540,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2557,7 +2557,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2608,7 +2608,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2693,7 +2693,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2710,7 +2710,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2744,7 +2744,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2761,7 +2761,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2778,7 +2778,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2795,7 +2795,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2812,7 +2812,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2829,7 +2829,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2846,7 +2846,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2880,7 +2880,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2897,7 +2897,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2914,7 +2914,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2948,7 +2948,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2982,7 +2982,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -2999,7 +2999,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3016,7 +3016,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3033,7 +3033,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3084,7 +3084,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3101,7 +3101,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3118,7 +3118,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3135,7 +3135,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3152,7 +3152,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3169,7 +3169,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3220,7 +3220,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3237,7 +3237,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3271,7 +3271,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3288,7 +3288,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3305,7 +3305,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3322,7 +3322,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3339,7 +3339,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3373,7 +3373,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3390,7 +3390,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3407,7 +3407,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3424,7 +3424,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3441,7 +3441,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3475,7 +3475,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3492,7 +3492,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3509,7 +3509,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3526,7 +3526,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3543,7 +3543,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3577,7 +3577,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3594,7 +3594,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3611,7 +3611,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3628,7 +3628,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3645,7 +3645,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3662,7 +3662,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3679,7 +3679,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3696,7 +3696,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3713,7 +3713,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3730,7 +3730,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3747,7 +3747,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3764,7 +3764,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3781,7 +3781,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3815,7 +3815,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3832,7 +3832,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3900,7 +3900,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -3968,7 +3968,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4002,7 +4002,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4104,7 +4104,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4138,7 +4138,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4155,7 +4155,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4172,7 +4172,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4223,7 +4223,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4240,7 +4240,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4257,7 +4257,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4308,7 +4308,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4325,7 +4325,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4410,7 +4410,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4427,7 +4427,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4478,7 +4478,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4512,7 +4512,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4529,7 +4529,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4546,7 +4546,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4580,7 +4580,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4597,7 +4597,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4614,7 +4614,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4631,7 +4631,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4648,7 +4648,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4665,7 +4665,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4699,7 +4699,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4767,7 +4767,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4784,7 +4784,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4801,7 +4801,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4818,7 +4818,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4835,7 +4835,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4852,7 +4852,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4869,7 +4869,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4886,7 +4886,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4903,7 +4903,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4920,7 +4920,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4937,7 +4937,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -4954,7 +4954,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5022,7 +5022,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5039,7 +5039,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5056,7 +5056,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5073,7 +5073,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5090,7 +5090,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5107,7 +5107,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5124,7 +5124,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5141,7 +5141,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5158,7 +5158,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5175,7 +5175,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5243,7 +5243,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5260,7 +5260,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5277,7 +5277,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5311,7 +5311,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5328,7 +5328,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5345,7 +5345,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5362,7 +5362,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5396,7 +5396,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5413,7 +5413,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5430,7 +5430,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5464,7 +5464,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5498,7 +5498,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5515,7 +5515,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5549,7 +5549,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5583,7 +5583,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5600,7 +5600,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5617,7 +5617,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5634,7 +5634,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5651,7 +5651,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5668,7 +5668,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5685,7 +5685,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5702,7 +5702,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5719,7 +5719,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5736,7 +5736,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5753,7 +5753,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     },
@@ -5770,7 +5770,7 @@
       "last_ex_date": null,
       "last_distribution_per_unit": null,
       "last_distribution_yield_pct": null,
-      "trailing_12m_distribution_per_unit": 0.0,
+      "trailing_12m_distribution_per_unit": null,
       "trailing_12m_yield_pct": null,
       "has_paid_in_12m": false
     }
