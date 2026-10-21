@@ -108,10 +108,10 @@ def get_twse_registry(session: requests.Session) -> pd.DataFrame:
         "short_name": df[c_short].map(clean),
         "full_name": df[c_name].map(clean),
         "type_text": df[c_type].map(clean),
-        "fund_id": df[c_id].map(clean).str.replace(r"\\.0$", "", regex=True).str.zfill(8),
+        "fund_id": df[c_id].map(clean).str.replace(r"\.0$", "", regex=True).str.zfill(8),
         "listing_date": df[c_listing].map(registry_date),
     })
-    out = out[out.code.str.match(r"^\\d{4,6}[A-Z]{0,2}$", na=False)]
+    out = out[out.code.str.match(r"^\d{4,6}[A-Z]{0,2}$", na=False)]
     return out.drop_duplicates("code", keep="last")
 
 
