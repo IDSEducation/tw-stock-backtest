@@ -98,7 +98,7 @@ def get_report(session: requests.Session) -> tuple[pd.DataFrame, str]:
             c_benef = pick(cols, "總受益人數", "受益人數")
             c_fundid = pick(cols, "基金統編")
             c_type = pick(cols, "類型代號", "基金類型")
-            c_rule = pick(cols, "分配", "級別")
+            c_rule = cols.get("類型") or pick(cols, "分配", "級別")
             if any(x is None for x in (c_code, c_name, c_aum, c_nav)):
                 continue
             result = pd.DataFrame({
