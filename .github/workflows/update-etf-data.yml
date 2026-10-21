@@ -13,6 +13,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: refresh-etf-data
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
@@ -36,5 +40,7 @@ jobs:
             echo "ETF data has not changed."
           else
             git commit -m "Refresh Taiwan ETF data"
+            git fetch origin main
+            git rebase origin/main
             git push
           fi
