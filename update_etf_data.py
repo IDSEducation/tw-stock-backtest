@@ -163,14 +163,23 @@ def main() -> None:
         twelve_month_sum = float(trailing.amount.sum()) if not trailing.empty else 0.0
         last_amount = float(last.amount.iloc[0]) if not last.empty else None
         policy = clean(fund["distribution_policy"])
-        # Code suffix A is the Taiwan-listed active ETF code convention. Keep
-        # the source policy text visible for cross-checking.
+        # The official policy field explicitly distinguishes distribution and
+        # non-distribution classes. A blank/unknown policy is not evidence of
+        # non-distribution; scheduled distribution also does not guarantee a
+        # cash payment in every period.
+        if re.search(r"不配息|不分配", policy):
+            policy_status = "no_distribution"
+        elif "分配" in policy:
+            policy_status = "distribution"
+        else:
+            policy_status = "unspecified"
         # SITCA type codes distinguish active (ALxx) from index/passive (AHxx)
         # funds more reliably than the listing-code suffix.
         management = "主動式" if clean(fund["type_code"]).upper().startswith("AL") else "被動式／其他"
         rows.append({
             "code": fund["code"], "name": fund["name"],
             "management": management, "fund_type_code": fund["type_code"], "distribution_policy": policy,
+            "distribution_policy_status": policy_status,
             "aum_twd": fund["aum"], "nav_twd": nav,
             "beneficiaries": fund["beneficiaries"],
             "beneficiaries_date": data_month,
