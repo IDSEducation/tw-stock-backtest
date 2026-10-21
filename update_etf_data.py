@@ -201,8 +201,11 @@ def main() -> None:
         funds["listing_date"] = funds["code"].map(lambda c: registry_by_code.get(c, {}).get("listing_date"))
         existing = set(funds["code"])
         supplements = []
+        report_period = f"{data_month[:4]}-{data_month[4:]}"
         for item in registry.to_dict("records"):
-            if item["code"] in existing:
+            # The registry may retain historical listings. Only supplement codes
+            # listed after the latest SITCA monthly report to avoid reviving old ETFs.
+            if item["code"] in existing or not item["listing_date"] or item["listing_date"][:7] <= report_period:
                 continue
             # For brand-new listings, the registry supplies identity and date;
             # monthly AUM/NAV/beneficiary data will fill in from SITCA later.
