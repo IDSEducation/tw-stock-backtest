@@ -41,6 +41,6 @@ jobs:
           else
             git commit -m "Refresh Taiwan ETF data"
             git fetch origin main
-            git rebase origin/main
+            git rebase -X theirs origin/main
             git push
           fi
