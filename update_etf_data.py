@@ -97,7 +97,8 @@ def get_report(session: requests.Session) -> tuple[pd.DataFrame, str]:
             c_nav = pick(cols, "單位淨值(台幣)", "單位淨值（台幣）")
             c_benef = pick(cols, "總受益人數", "受益人數")
             c_fundid = pick(cols, "基金統編")
-            c_rule = pick(cols, "類型")
+            c_type = pick(cols, "類型代號", "基金類型")
+            c_rule = pick(cols, "分配", "級別")
             if any(x is None for x in (c_code, c_name, c_aum, c_nav)):
                 continue
             result = pd.DataFrame({
@@ -107,6 +108,7 @@ def get_report(session: requests.Session) -> tuple[pd.DataFrame, str]:
                 "nav": table[c_nav].map(number),
                 "beneficiaries": table[c_benef].map(number) if c_benef is not None else pd.Series([None] * len(table), index=table.index),
                 "fund_id": table[c_fundid].map(clean).str.replace(r"\.0$", "", regex=True).str.zfill(8) if c_fundid is not None else "",
+                "type_code": table[c_type].map(clean) if c_type is not None else "",
                 "distribution_policy": table[c_rule].map(clean) if c_rule is not None else "",
             })
             result = result[result.code.str.match(r"^\d{4,6}[A-Z]{0,2}$", na=False)]
@@ -163,10 +165,12 @@ def main() -> None:
         policy = clean(fund["distribution_policy"])
         # Code suffix A is the Taiwan-listed active ETF code convention. Keep
         # the source policy text visible for cross-checking.
-        management = "主動式" if re.search(r"A$", fund["code"]) else "被動式／其他"
+        # SITCA type codes distinguish active (ALxx) from index/passive (AHxx)
+        # funds more reliably than the listing-code suffix.
+        management = "主動式" if clean(fund["type_code"]).upper().startswith("AL") else "被動式／其他"
         rows.append({
             "code": fund["code"], "name": fund["name"],
-            "management": management, "distribution_policy": policy,
+            "management": management, "fund_type_code": fund["type_code"], "distribution_policy": policy,
             "aum_twd": fund["aum"], "nav_twd": nav,
             "beneficiaries": fund["beneficiaries"],
             "beneficiaries_date": data_month,
@@ -174,7 +178,7 @@ def main() -> None:
             "last_distribution_per_unit": last_amount,
             "last_distribution_yield_pct": round(last_amount / nav * 100, 4) if last_amount is not None and nav else None,
             "trailing_12m_distribution_per_unit": round(twelve_month_sum, 6),
-            "trailing_12m_yield_pct": round(twelve_month_sum / nav * 100, 4) if nav else None,
+            "trailing_12m_yield_pct": round(twelve_month_sum / nav * 100, 4) if nav and not trailing.empty else None,
             "has_paid_in_12m": bool(not trailing.empty),
         })
     rows.sort(key=lambda x: x["code"])
@@ -184,7 +188,7 @@ def main() -> None:
         "data_month": f"{data_month[:4]}-{data_month[4:]}",
         "sources": {
             "aum_and_beneficiaries": "SITCA ETF monthly detail",
-            "dividends": "SITCA / Government Open Data dataset 160547",
+            "dividends": "SITCA / Government Open Data dataset 160547 (irregular updates)",
             "aum_url": ETF_PAGE.format(ym=data_month),
             "dividend_url": "https://data.gov.tw/dataset/160547",
             "holders_url": "https://data.gov.tw/dataset/11452",
