@@ -13,15 +13,15 @@
 </head>
 <body>
 <main class="shell">
-  <header class="top"><div class="brand"><div class="brand-mark">↗</div><span>巧虎投資實驗室</span><span class="badge">v2.0.3</span></div><nav class="mode-switch" aria-label="投資工具切換"><a class="mode-btn single active" href="./" aria-current="page"><span class="mode-icon">1</span><span><strong>單筆投入回測</strong><small>一次投入本金，查看期末淨利</small></span></a><a class="mode-btn recurring" href="dca.html"><span class="mode-icon">↻</span><span><strong>定期定額回測</strong><small>固定頻率投入，累積持股</small></span><span class="mode-arrow" aria-hidden="true">→</span></a><a class="mode-btn etf" href="etf.html"><span class="mode-icon">ETF</span><span><strong>台灣 ETF 一覽</strong><small>規模、受益人、配息與殖利率</small></span><span class="mode-arrow" aria-hidden="true">→</span></a><a class="mode-btn etf" href="compare.html"><span class="mode-icon">↔</span><span><strong>比較回測</strong><small>多檔投資成果並排比較</small></span><span class="mode-arrow" aria-hidden="true">→</span></a></nav></header>
+  <header class="top"><div class="brand"><div class="brand-mark">↗</div><span>巧虎投資實驗室</span><span class="badge">v2.0.4</span></div><nav class="mode-switch" aria-label="投資工具切換"><a class="mode-btn single active" href="./" aria-current="page"><span class="mode-icon">1</span><span><strong>單筆投入回測</strong><small>一次投入本金，查看期末淨利</small></span></a><a class="mode-btn recurring" href="dca.html"><span class="mode-icon">↻</span><span><strong>定期定額回測</strong><small>固定頻率投入，累積持股</small></span><span class="mode-arrow" aria-hidden="true">→</span></a><a class="mode-btn etf" href="etf.html"><span class="mode-icon">ETF</span><span><strong>台灣 ETF 一覽</strong><small>規模、受益人、配息與殖利率</small></span><span class="mode-arrow" aria-hidden="true">→</span></a><a class="mode-btn etf" href="compare.html"><span class="mode-icon">↔</span><span><strong>比較回測</strong><small>多檔投資成果並排比較</small></span><span class="mode-arrow" aria-hidden="true">→</span></a></nav></header>
   <section class="hero"><div class="eyebrow">HISTORICAL INVESTMENT SIMULATOR</div><h1>單筆投入回測</h1><p>選擇一檔台股或 ETF，輸入投入本金與日期，查看扣除股利調整、手續費及交易稅後的淨利與報酬率。</p></section>
   <div class="layout">
     <section class="card form-card">
       <h2 class="section-title">回測條件</h2>
       <form id="form">
         <div class="field"><label for="stock">台股代號</label><input id="stock" type="text" value="2330" inputmode="text" autocapitalize="characters" spellcheck="false" maxlength="8" required placeholder="例如 2330、00980A、00631L"><p class="hint">支援一般股票、ETF、主動式 ETF、槓桿／反向 ETF 代號。</p></div>
-        <div class="two"><div class="field"><label for="start">開始日期</label><input id="start" type="date" required></div><div class="field"><label for="end">結束日期</label><input id="end" type="date" required></div></div>
-        <div class="field"><label for="amount">單筆投入本金（新台幣，10萬～2,000萬）</label><input id="amount" type="number" min="100000" max="20000000" step="10000" value="100000" required></div>
+        <div class="two"><div class="field"><label for="start">開始日期</label><input id="start" type="text" inputmode="text" autocomplete="off" placeholder="YYYY-MM-DD 或 2001.1" required></div><div class="field"><label for="end">結束日期</label><input id="end" type="text" inputmode="text" autocomplete="off" placeholder="YYYY-MM-DD 或 2003.5" required></div></div><p class="hint date-hint">可直接輸入日期，也可只輸入年月，例如 2001.1 至 2003.5（開始月從 1 日起算，結束月算到月底）。</p>
+        <div class="field"><label for="amount">單筆投入本金（新台幣，1萬～3,000萬）</label><input id="amount" type="number" min="10000" max="30000000" step="1000" value="100000" required></div>
         <details class="advanced"><summary>交易成本設定</summary>
           <div class="two"><div class="field"><label for="buyFee">買進手續費（%）</label><input id="buyFee" type="number" min="0" step="0.0001" value="0.1425"></div><div class="field"><label for="sellFee">賣出手續費（%）</label><input id="sellFee" type="number" min="0" step="0.0001" value="0.1425"></div></div>
           <div class="field"><label for="tax">股票交易稅（%）</label><input id="tax" type="number" min="0" step="0.01" value="0.3"></div>
@@ -46,6 +46,7 @@ const now=new Date(), today=now.toISOString().slice(0,10); const five=new Date(n
 $("start").value=five.toISOString().slice(0,10); $("end").value=today;
 const fmt=n=>new Intl.NumberFormat("zh-TW",{maximumFractionDigits:2}).format(n);
 const pct=n=>(n>=0?"+":"")+n.toFixed(2)+"%";
+function parseDateInput(value,edge){const s=String(value||"").trim();let m=s.match(/^(\d{4})[-/.](\d{1,2})(?:[-/.](\d{1,2}))?$/);if(!m&&/^\d{8}$/.test(s))m=[s,s.slice(0,4),s.slice(4,6),s.slice(6,8)];if(!m)throw new Error("日期請輸入 YYYY-MM-DD、YYYY/M/D，或年月 YYYY.M，例如 2001.1。");const y=Number(m[1]),month=Number(m[2]),hasDay=!!m[3],day=hasDay?Number(m[3]):(edge==="end"?new Date(Date.UTC(y,month,0)).getUTCDate():1);const d=new Date(Date.UTC(y,month-1,day));if(month<1||month>12||day<1||d.getUTCFullYear()!==y||d.getUTCMonth()!==month-1||d.getUTCDate()!==day)throw new Error("日期無效，請重新輸入。");return [String(y).padStart(4,"0"),String(month).padStart(2,"0"),String(day).padStart(2,"0")].join("-")}
 const safeNum=x=>{const n=Number(x);return Number.isFinite(n)?n:0};
 async function fetchData(dataset,id,start,end){
   const u=new URL("https://api.finmindtrade.com/api/v4/data");
@@ -131,11 +132,12 @@ function render(r){
 }
 $("form").addEventListener("submit",async e=>{
   e.preventDefault();$("error").classList.add("hidden");$("results").classList.add("hidden");$("empty").classList.add("hidden");$("loading").classList.remove("hidden");$("run").disabled=true;
-  const args={stock:$("stock").value.trim().toUpperCase(),start:$("start").value,end:$("end").value,amount:Number($("amount").value),buyFee:Number($("buyFee").value),sellFee:Number($("sellFee").value),tax:Number($("tax").value)};
+  const args={stock:$("stock").value.trim().toUpperCase(),startRaw:$("start").value,endRaw:$("end").value,amount:Number($("amount").value),buyFee:Number($("buyFee").value),sellFee:Number($("sellFee").value),tax:Number($("tax").value)};
   try{
+    args.start=parseDateInput(args.startRaw,"start");args.end=parseDateInput(args.endRaw,"end");
     if(!/^\d{4,6}[A-Z]{0,2}$/.test(args.stock))throw new Error("代號格式請輸入 4 至 6 位數字，可加 1 至 2 個英文字尾，例如 00980A 或 00631L。");
     if(!args.start||!args.end||args.start>args.end)throw new Error("請確認日期範圍正確，開始日期需早於結束日期。");
-    if(!Number.isFinite(args.amount)||args.amount<100000||args.amount>20000000)throw new Error("單筆本金請輸入新台幣 10 萬至 2,000 萬。");
+    if(!Number.isFinite(args.amount)||args.amount<10000||args.amount>30000000)throw new Error("單筆本金請輸入新台幣 1 萬至 3,000 萬。");
     if([args.buyFee,args.sellFee,args.tax].some(x=>!Number.isFinite(x)||x<0))throw new Error("請確認交易成本設定為有效的非負數。");
     $("loadingText").textContent=`正在下載 ${args.stock} 的行情、股利與分割資料…`;
     const [p,d,allSplits]=await Promise.all([fetchData("TaiwanStockPrice",args.stock,args.start,args.end),fetchData("TaiwanStockDividend",args.stock,args.start,args.end),fetchData("TaiwanStockSplitPrice")]);
