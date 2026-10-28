@@ -203,11 +203,17 @@ FEE_FIELDS = {
 def expense_period(row: pd.Series, period_col: object | None, year_col: object | None, month_col: object | None) -> str | None:
     if period_col is not None:
         raw = clean(row[period_col])
-        match = re.search(r"(\d{3,4})[./-]?(\d{1,2})", raw)
+        match = re.fullmatch(r"(\d{3,4})[./-](\d{1,2})", raw)
         if match:
             year, month = int(match.group(1)), int(match.group(2))
         else:
-            return None
+            digits = re.sub(r"\D", "", raw)
+            if len(digits) == 5:
+                year, month = int(digits[:3]), int(digits[3:])
+            elif len(digits) == 6:
+                year, month = int(digits[:4]), int(digits[4:])
+            else:
+                return None
     elif year_col is not None and month_col is not None:
         raw_year, raw_month = clean(row[year_col]), clean(row[month_col])
         if not raw_year.isdigit() or not raw_month.isdigit():
@@ -266,7 +272,12 @@ def get_expenses(session: requests.Session) -> tuple[dict[str, dict], str]:
             lambda value: end_index - 11 <= int(value[:4]) * 12 + int(value[5:7]) - 1 <= end_index
         )]
         month_count = int(window["__period"].nunique())
-        item = {"fee_latest_month": latest_period, "fee_month_count_12m": month_count}
+        item = {
+            "fee_latest_month": latest_period,
+            "fee_month_count_12m": month_count,
+            "fee_trailing_12m_start": min(window["__period"]),
+            "fee_trailing_12m_end": max(window["__period"]),
+        }
         for key, column in mapped.items():
             item[f"fee_month_{key}_pct"] = number(latest[column]) if column is not None else None
             if month_count == 12:
