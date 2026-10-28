@@ -389,6 +389,7 @@ def main() -> None:
         "schema_version": 1,
         "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
         "data_month": f"{data_month[:4]}-{data_month[4:]}",
+        "expense_data_month": expense_month,
         "sources": {
             "aum_and_beneficiaries": "SITCA ETF monthly detail",
             "listing_registry": "TWSE ETF Fund Basic Information Summary (Open Data dataset 157399)",
