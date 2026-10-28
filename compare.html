@@ -11,7 +11,7 @@
 </style>
 </head>
 <body><main class="shell">
-<header class="top"><div class="brand"><div class="mark">↗</div>巧虎投資實驗室 <span class="badge">v2.0.4｜比較回測</span></div><nav class="nav" aria-label="頁面導覽"><a href="./">單筆投入</a><a href="dca.html">定期定額</a><a href="etf.html">ETF 一覽</a><a class="active" href="compare.html" aria-current="page">比較回測</a></nav></header>
+<header class="top"><div class="brand"><div class="mark">↗</div>巧虎投資實驗室 <span class="badge">v2.0.6｜比較回測</span></div><nav class="nav" aria-label="頁面導覽"><a href="./">單筆投入</a><a href="dca.html">定期定額</a><a href="etf.html">ETF 一覽</a><a class="active" href="compare.html" aria-current="page">比較回測</a></nav></header>
 <section class="hero"><div class="eyebrow">COMPARE INVESTMENT STRATEGIES</div><h1>多檔標的一起比較</h1><p>輸入多個股票或 ETF 代號，在相同日期、相同投入條件下比較期末資產、淨利與淨報酬率。資料載入完成後會逐檔列出，方便找出差異。</p></section>
 <section class="card controls">
 <div class="modes"><button class="mode on" id="singleMode" type="button">單筆投入比較</button><button class="mode" id="dcaMode" type="button">定期定額比較</button></div>
@@ -32,7 +32,7 @@
 </form></section>
 <div id="message" class="message hidden" role="status"></div><section id="results" class="results hidden"></section>
 <div class="note">比較口徑：每檔各自投入表單所填的本金，整股買進、未使用現金留在帳上；定期定額的最後資產假設在回測結束日賣出。持有期間將現金股利計入、股票股利換算股數，並依來源的 ETF 分割前後參考價調整股數。淨利與報酬率為估算，沒有包含個人股利所得稅、健保補充保費、券商最低手續費及券商折扣；非投資建議。</div>
-<footer class="footer">巧虎投資實驗室 v2.0.4｜比較回測新增版｜資料來源：FinMind 公開資料服務</footer>
+<footer class="footer">巧虎投資實驗室 v2.0.6｜比較回測新增版｜資料來源：FinMind 公開資料服務</footer>
 </main>
 <script>
 const $=id=>document.getElementById(id), today=new Date().toISOString().slice(0,10);
