@@ -24,6 +24,10 @@ DIVIDENDS_CSV = (
     "https://www.sitca.org.tw/MemberK0000/F/03/"
     "160547%E6%8A%95%E4%BF%A1%E6%8A%95%E9%A1%A7%E5%85%AC%E6%9C%83%E5%A2%83%E5%85%A7%E5%9F%BA%E9%87%91%E9%85%8D%E6%81%AF%E8%B3%87%E6%96%99.csv"
 )
+EXPENSES_CSV = (
+    "https://www.sitca.org.tw/MemberK0000/F/03/"
+    "46443%E6%8A%95%E4%BF%A1%E6%8A%95%E9%A1%A7%E5%85%AC%E6%9C%83%E5%A2%83%E5%85%A7%E5%9F%BA%E9%87%91%E5%90%84%E9%A0%85%E8%B2%BB%E7%94%A8%E8%B3%87%E6%96%99.csv"
+)
 UA = {"User-Agent": "Mozilla/5.0 (compatible; TaiwanETFDashboard/1.0)"}
 
 
@@ -185,6 +189,95 @@ def get_dividends(session: requests.Session) -> pd.DataFrame:
     })
 
 
+FEE_FIELDS = {
+    "management": "月經理費_比率",
+    "custody": "月保管費_比率",
+    "guarantee": "月保證費_比率",
+    "other": "月其他費用_比率",
+    "commission": "月手續費_比率",
+    "transaction_tax": "月交易稅_比率",
+    "total": "合計_比率",
+}
+
+
+def expense_period(row: pd.Series, period_col: object | None, year_col: object | None, month_col: object | None) -> str | None:
+    if period_col is not None:
+        raw = clean(row[period_col])
+        match = re.search(r"(\\d{3,4})[./-]?(\\d{1,2})", raw)
+        if match:
+            year, month = int(match.group(1)), int(match.group(2))
+        else:
+            return None
+    elif year_col is not None and month_col is not None:
+        raw_year, raw_month = clean(row[year_col]), clean(row[month_col])
+        if not raw_year.isdigit() or not raw_month.isdigit():
+            return None
+        year, month = int(raw_year), int(raw_month)
+    else:
+        return None
+    if year < 1911:
+        year += 1911
+    if month < 1 or month > 12:
+        return None
+    return f"{year:04d}-{month:02d}"
+
+
+def get_expenses(session: requests.Session) -> tuple[dict[str, dict], str]:
+    res = session.get(EXPENSES_CSV, timeout=60)
+    res.raise_for_status()
+    raw = None
+    for enc in ("utf-8-sig", "cp950", "big5"):
+        try:
+            raw = res.content.decode(enc)
+            break
+        except UnicodeDecodeError:
+            pass
+    if raw is None:
+        raw = res.content.decode("utf-8", errors="replace")
+    df = pd.read_csv(StringIO(raw), dtype=str)
+    cols = colmap(df)
+    fund_id = pick(cols, "基金統編")
+    period_col = cols.get("年月")
+    year_col = cols.get("年")
+    month_col = cols.get("月")
+    if fund_id is None or not any((period_col is not None, year_col is not None and month_col is not None)):
+        raise RuntimeError(f"費用 CSV 欄位有變動：{list(cols)}")
+    mapped = {}
+    for key, label in FEE_FIELDS.items():
+        mapped[key] = cols.get(label)
+    if not any(mapped.values()):
+        raise RuntimeError(f"費用 CSV 找不到費用比率欄位：{list(cols)}")
+    df = df.copy()
+    df["__fund_id"] = df[fund_id].map(clean).str.replace(r"\\.0$", "", regex=True).str.zfill(8)
+    df["__period"] = df.apply(lambda row: expense_period(row, period_col, year_col, month_col), axis=1)
+    df = df.dropna(subset=["__period"])
+    if df.empty:
+        raise RuntimeError("費用 CSV 沒有可辨識的年月資料。")
+    latest_global = max(df["__period"])
+    output = {}
+    for identifier, group in df.groupby("__fund_id"):
+        if not identifier:
+            continue
+        group = group.drop_duplicates("__period", keep="last").sort_values("__period")
+        latest = group.iloc[-1]
+        latest_period = clean(latest["__period"])
+        end_index = int(latest_period[:4]) * 12 + int(latest_period[5:7]) - 1
+        window = group[group["__period"].map(
+            lambda value: end_index - 11 <= int(value[:4]) * 12 + int(value[5:7]) - 1 <= end_index
+        )]
+        month_count = int(window["__period"].nunique())
+        item = {"fee_latest_month": latest_period, "fee_month_count_12m": month_count}
+        for key, column in mapped.items():
+            item[f"fee_month_{key}_pct"] = number(latest[column]) if column is not None else None
+            if month_count == 12:
+                values = window[column].map(number).dropna() if column is not None else pd.Series(dtype=float)
+                item[f"fee_trailing_12m_{key}_pct"] = round(float(values.sum()), 6) if len(values) == 12 else None
+            else:
+                item[f"fee_trailing_12m_{key}_pct"] = None
+        output[identifier] = item
+    return output, latest_global
+
+
 def main() -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     session = requests.Session()
@@ -221,6 +314,13 @@ def main() -> None:
             funds = pd.concat([funds, pd.DataFrame(supplements)], ignore_index=True)
             print(f"TWSE open-data supplement: added {len(supplements)} ETF listings missing from the SITCA monthly report.")
     dividends = get_dividends(session)
+    expenses = {}
+    expense_month = None
+    try:
+        expenses, expense_month = get_expenses(session)
+        print(f"SITCA expense data loaded through {expense_month}; matched {len(expenses)} fund IDs.")
+    except Exception as exc:
+        print(f"SITCA expense data temporarily unavailable; fee fields will be blank: {exc}", file=sys.stderr)
     cutoff = pd.Timestamp.today().normalize() - pd.Timedelta(days=365)
     rows = []
     for fund in funds.to_dict("records"):
@@ -231,6 +331,7 @@ def main() -> None:
         trailing = subset[subset.parsed_date >= cutoff]
         last = subset.sort_values("parsed_date").tail(1)
         nav = fund["nav"]
+        fee = expenses.get(clean(fund["fund_id"]), {})
         twelve_month_sum = float(trailing.amount.sum()) if not trailing.empty else 0.0
         last_amount = float(last.amount.iloc[0]) if not last.empty else None
         policy = clean(fund["distribution_policy"])
@@ -262,6 +363,15 @@ def main() -> None:
             "trailing_12m_distribution_per_unit": round(twelve_month_sum, 6) if not trailing.empty else None,
             "trailing_12m_yield_pct": round(twelve_month_sum / nav * 100, 4) if nav and not trailing.empty else None,
             "has_paid_in_12m": bool(not trailing.empty),
+            **{key: fee.get(key) for key in (
+                "fee_latest_month", "fee_month_count_12m",
+                "fee_month_management_pct", "fee_month_custody_pct", "fee_month_guarantee_pct",
+                "fee_month_other_pct", "fee_month_commission_pct", "fee_month_transaction_tax_pct",
+                "fee_month_total_pct", "fee_trailing_12m_management_pct", "fee_trailing_12m_custody_pct",
+                "fee_trailing_12m_guarantee_pct", "fee_trailing_12m_other_pct",
+                "fee_trailing_12m_commission_pct", "fee_trailing_12m_transaction_tax_pct",
+                "fee_trailing_12m_total_pct",
+            )},
         })
     rows.sort(key=lambda x: x["code"])
     payload = {
@@ -275,6 +385,9 @@ def main() -> None:
             "dividends": "SITCA / Government Open Data dataset 160547 (irregular updates)",
             "aum_url": ETF_PAGE.format(ym=data_month),
             "dividend_url": "https://data.gov.tw/dataset/160547",
+            "expense_ratios": "SITCA domestic fund monthly expense ratios dataset 46443",
+            "expense_ratios_url": "https://data.gov.tw/dataset/46443",
+            "expense_data_month": expense_month,
             "holders_url": "https://data.gov.tw/dataset/11452",
         },
         "count": len(rows), "etfs": rows,
