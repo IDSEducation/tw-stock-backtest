@@ -8,7 +8,8 @@ on:
       - update_etf_data.py
       - .github/workflows/update-etf-data.yml
   schedule:
-    - cron: "17 0 * * 6"
+    # 20:17 Taiwan time; rerun official sources daily so new ETF/monthly/dividend data is picked up promptly.
+    - cron: "17 12 * * *"
 
 permissions:
   contents: write
