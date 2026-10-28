@@ -203,7 +203,7 @@ FEE_FIELDS = {
 def expense_period(row: pd.Series, period_col: object | None, year_col: object | None, month_col: object | None) -> str | None:
     if period_col is not None:
         raw = clean(row[period_col])
-        match = re.search(r"(\\d{3,4})[./-]?(\\d{1,2})", raw)
+        match = re.search(r"(\d{3,4})[./-]?(\d{1,2})", raw)
         if match:
             year, month = int(match.group(1)), int(match.group(2))
         else:
@@ -248,7 +248,7 @@ def get_expenses(session: requests.Session) -> tuple[dict[str, dict], str]:
     if not any(mapped.values()):
         raise RuntimeError(f"費用 CSV 找不到費用比率欄位：{list(cols)}")
     df = df.copy()
-    df["__fund_id"] = df[fund_id].map(clean).str.replace(r"\\.0$", "", regex=True).str.zfill(8)
+    df["__fund_id"] = df[fund_id].map(clean).str.replace(r"\.0$", "", regex=True).str.zfill(8)
     df["__period"] = df.apply(lambda row: expense_period(row, period_col, year_col, month_col), axis=1)
     df = df.dropna(subset=["__period"])
     if df.empty:
