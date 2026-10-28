@@ -375,7 +375,7 @@ def main() -> None:
             "trailing_12m_yield_pct": round(twelve_month_sum / nav * 100, 4) if nav and not trailing.empty else None,
             "has_paid_in_12m": bool(not trailing.empty),
             **{key: fee.get(key) for key in (
-                "fee_latest_month", "fee_month_count_12m",
+                "fee_latest_month", "fee_month_count_12m", "fee_trailing_12m_start", "fee_trailing_12m_end",
                 "fee_month_management_pct", "fee_month_custody_pct", "fee_month_guarantee_pct",
                 "fee_month_other_pct", "fee_month_commission_pct", "fee_month_transaction_tax_pct",
                 "fee_month_total_pct", "fee_trailing_12m_management_pct", "fee_trailing_12m_custody_pct",
