@@ -24,6 +24,7 @@ DIVIDENDS_CSV = (
     "https://www.sitca.org.tw/MemberK0000/F/03/"
     "160547%E6%8A%95%E4%BF%A1%E6%8A%95%E9%A1%A7%E5%85%AC%E6%9C%83%E5%A2%83%E5%85%A7%E5%9F%BA%E9%87%91%E9%85%8D%E6%81%AF%E8%B3%87%E6%96%99.csv"
 )
+DAILY_NAV_CSV = "https://www.sitca.org.tw/MemberK0000/F/03/nav.csv"
 EXPENSES_CSV = (
     "https://www.sitca.org.tw/MemberK0000/F/03/"
     "46443%E6%8A%95%E4%BF%A1%E6%8A%95%E9%A1%A7%E5%85%AC%E6%9C%83%E5%A2%83%E5%85%A7%E5%9F%BA%E9%87%91%E5%90%84%E9%A0%85%E8%B2%BB%E7%94%A8%E8%B3%87%E6%96%99.csv"
@@ -160,6 +161,46 @@ def get_report(session: requests.Session) -> tuple[pd.DataFrame, str]:
             if not result.empty:
                 return result.drop_duplicates("code", keep="last"), ym
     raise RuntimeError("SITCA 找不到最近 6 個月份的 ETF 明細；保留上次資料，不發布空清單。")
+
+
+def get_daily_navs(session: requests.Session) -> tuple[dict[str, dict], str]:
+    """Load official daily NAVs indexed by ETF beneficiary-certificate code."""
+    res = session.get(DAILY_NAV_CSV, timeout=60)
+    res.raise_for_status()
+    df = pd.read_csv(StringIO(res.content.decode("utf-8-sig", errors="replace")), dtype=str)
+    cols = colmap(df)
+    c_date = cols.get("日期")
+    c_ticker = pick(cols, "受益憑證代號")
+    c_nav = pick(cols, "基金淨值")
+    c_change = pick(cols, "漲跌")
+    c_change_pct = pick(cols, "漲跌幅")
+    c_currency = pick(cols, "幣別")
+    if c_date is None or c_ticker is None or c_nav is None:
+        raise RuntimeError(f"每日淨值 CSV 欄位有變動：{list(cols)}")
+    out = pd.DataFrame({
+        "code": df[c_ticker].map(code),
+        "date": pd.to_datetime(df[c_date].map(clean), format="%Y%m%d", errors="coerce"),
+        "nav": df[c_nav].map(number),
+        "change": df[c_change].map(number) if c_change is not None else None,
+        "change_pct": df[c_change_pct].map(number) if c_change_pct is not None else None,
+        "currency": df[c_currency].map(clean) if c_currency is not None else "",
+    })
+    out = out[out.code.str.match(r"^\d{4,6}[A-Z]{0,2}$", na=False)]
+    out = out.dropna(subset=["date", "nav"]).sort_values("date")
+    if out.empty:
+        raise RuntimeError("每日淨值 CSV 沒有可辨識的基金資料。")
+    latest_global = out["date"].max().date().isoformat()
+    latest_per_code = out.drop_duplicates("code", keep="last")
+    result = {}
+    for row in latest_per_code.to_dict("records"):
+        result[row["code"]] = {
+            "nav_twd": float(row["nav"]),
+            "nav_date": row["date"].date().isoformat(),
+            "nav_change": None if pd.isna(row["change"]) else float(row["change"]),
+            "nav_change_pct": None if pd.isna(row["change_pct"]) else float(row["change_pct"]),
+            "nav_currency": row["currency"] or None,
+        }
+    return result, latest_global
 
 
 def get_dividends(session: requests.Session) -> pd.DataFrame:
@@ -324,6 +365,13 @@ def main() -> None:
         if supplements:
             funds = pd.concat([funds, pd.DataFrame(supplements)], ignore_index=True)
             print(f"TWSE open-data supplement: added {len(supplements)} ETF listings missing from the SITCA monthly report.")
+    daily_navs = {}
+    nav_data_date = None
+    try:
+        daily_navs, nav_data_date = get_daily_navs(session)
+        print(f"Official daily NAV data loaded through {nav_data_date}; matched {len(daily_navs)} fund codes.")
+    except Exception as exc:
+        print(f"Official daily NAV data temporarily unavailable; use monthly NAV fallback: {exc}", file=sys.stderr)
     dividends = get_dividends(session)
     expenses = {}
     expense_month = None
@@ -341,7 +389,9 @@ def main() -> None:
         subset = subset.dropna(subset=["parsed_date", "amount"])
         trailing = subset[subset.parsed_date >= cutoff]
         last = subset.sort_values("parsed_date").tail(1)
-        nav = fund["nav"]
+        daily_nav = daily_navs.get(fund["code"], {})
+        nav = daily_nav.get("nav_twd", fund["nav"])
+        nav_date = daily_nav.get("nav_date")
         fee = expenses.get(clean(fund["fund_id"]), {})
         twelve_month_sum = float(trailing.amount.sum()) if not trailing.empty else 0.0
         last_amount = float(last.amount.iloc[0]) if not last.empty else None
@@ -366,6 +416,9 @@ def main() -> None:
             "listing_date": None if pd.isna(fund.get("listing_date")) else str(fund.get("listing_date")),
             "distribution_policy_status": policy_status,
             "aum_twd": fund["aum"], "nav_twd": nav,
+            "nav_date": nav_date, "nav_source": "SITCA daily NAV" if nav_date else "SITCA monthly ETF report",
+            "nav_change": daily_nav.get("nav_change"), "nav_change_pct": daily_nav.get("nav_change_pct"),
+            "nav_currency": daily_nav.get("nav_currency") or "TWD",
             "beneficiaries": fund["beneficiaries"],
             "beneficiaries_date": data_month,
             "last_ex_date": last.parsed_date.iloc[0].date().isoformat() if not last.empty else None,
@@ -390,8 +443,11 @@ def main() -> None:
         "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
         "data_month": f"{data_month[:4]}-{data_month[4:]}",
         "expense_data_month": expense_month,
+        "nav_data_date": nav_data_date,
         "sources": {
             "aum_and_beneficiaries": "SITCA ETF monthly detail",
+            "daily_nav": "SITCA securities investment trust fund daily NAV dataset 11109",
+            "daily_nav_url": "https://data.gov.tw/dataset/11109",
             "listing_registry": "TWSE ETF Fund Basic Information Summary (Open Data dataset 157399)",
             "listing_registry_url": "https://data.gov.tw/dataset/157399",
             "dividends": "SITCA / Government Open Data dataset 160547 (irregular updates)",
