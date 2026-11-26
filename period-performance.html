@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="比較台股與 ETF 指定月份或年度的歷史收盤績效，最多 10 檔。">
-<title>台股月年績效比較｜巧虎投資實驗室</title>
+<meta name="description" content="比較台股與 ETF 指定月份、季度或年度的拆股校正與含息總報酬，最多 10 檔。">
+<title>台股月季年總報酬比較｜巧虎投資實驗室</title>
 <style>
 :root{--ink:#182b25;--muted:#687a72;--paper:#f3f7f4;--line:#dfe8e2;--white:#fff;--green:#12805c;--green-bg:#e4f5ec;--red:#c44d4d;--red-bg:#fff0ef;--amber:#a86a08;--amber-bg:#fff5df;--blue:#326fa3;--blue-bg:#eaf3fb;--shadow:0 14px 38px #1c332512}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0,#e6f3ec 0,transparent 28%),var(--paper);color:var(--ink);font:15px/1.55 Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif}
@@ -30,9 +30,9 @@ nav{display:flex;gap:8px;flex-wrap:wrap}nav a{padding:8px 12px;color:#38564a;bac
 </head>
 <body>
 <main class="shell">
-<header><div class="brand"><span class="logo">↗</span>巧虎投資實驗室 <span class="version">月年績效比較｜v1.0</span></div>
-<nav aria-label="頁面導覽"><a href="./">單筆投入</a><a href="dca.html">定期定額</a><a href="etf.html">ETF 一覽</a><a href="compare.html">比較回測</a><a class="active" href="period-performance.html" aria-current="page">月年績效</a></nav></header>
-<section class="hero"><div class="eyebrow">CALENDAR PERFORMANCE</div><h1>台股月／季／年績效比較</h1><p>輸入最多 10 檔股票或 ETF，選擇月份、季度或年度。系統會計入拆股及配息，呈現純股價報酬、含息總報酬及標準化期末資產。</p></section>
+<header><div class="brand"><span class="logo">↗</span>巧虎投資實驗室 <span class="version">月季年總報酬｜v1.1</span></div>
+<nav aria-label="頁面導覽"><a href="./">單筆投入</a><a href="dca.html">定期定額</a><a href="etf.html">ETF 一覽</a><a href="compare.html">比較回測</a><a class="active" href="period-performance.html" aria-current="page">月季年績效</a></nav></header>
+<section class="hero"><div class="eyebrow">CALENDAR PERFORMANCE</div><h1>台股月／季／年總報酬比較</h1><p>輸入最多 10 檔股票或 ETF，選擇月份、季度或年度。系統會計入拆股及配息，呈現純股價報酬、含息總報酬及標準化期末資產。</p></section>
 <section class="card controls">
 <div class="mode" role="group" aria-label="績效期間"><button id="monthMode" class="active" type="button">按月份比較</button><button id="quarterMode" type="button">按季度比較</button><button id="yearMode" type="button">按年度比較</button></div>
 <form id="form">
@@ -50,7 +50,7 @@ nav{display:flex;gap:8px;flex-wrap:wrap}nav a{padding:8px 12px;color:#38564a;bac
 <div class="legend"><span class="gain">🟢 正報酬｜獲利</span><span class="loss">🔴 負報酬｜虧損</span><span class="neutral">⚪ 無明顯漲跌</span></div>
 <section id="results" class="results hidden"></section>
 <section class="note" style="margin-top:17px"><strong>計算方式與限制</strong><br>1. 每檔以 NT$100,000 起始本金做標準化比較，假設可買零股；這是績效比較基準，不代表實際委託股數。<br>2. 拆股不改變持有資產價值。系統以 Yahoo 拆股事件校正純股價報酬，並檢查行情是否已調整，避免把同一拆股調整兩次。<br>3. Yahoo 調整收盤價已反映拆股與股息。含息總報酬以調整收盤價計算，預設股息再投入；期末總資產依同一口徑換算，便於不同股票比較。<br>4. 期末總資產採股息再投入的總報酬口徑，不代表實際現金配息留存金額；不含手續費、交易稅、股利稅、滑價及實際下單股數限制。若 Yahoo 缺少公司行動事件，純股價報酬可能不完整。<br>5. Yahoo Finance 資料可能延遲、缺漏或限流；本頁使用其公開行情介面，非 Yahoo 官方商用 API。</section></section>
-<footer class="footer">巧虎投資實驗室｜月／年績效比較｜<a href="https://finance.yahoo.com/" target="_blank" rel="noopener">資料來源：Yahoo Finance</a></footer>
+<footer class="footer">巧虎投資實驗室｜月／季／年總報酬比較｜<a href="https://finance.yahoo.com/" target="_blank" rel="noopener">資料來源：Yahoo Finance</a></footer>
 </main>
 <script>
 const $=id=>document.getElementById(id),today=new Date();
